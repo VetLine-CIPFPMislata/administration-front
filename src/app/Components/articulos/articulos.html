@@ -1,0 +1,37 @@
+<div class="articulos">
+  <div class="articulos__header">
+    <h1 class="articulos__title">Gestión de Artículos</h1>
+    <a routerLink="/nuevo" class="articulos__btn articulos__btn--nuevo">Nuevo artículo</a>
+  </div>
+
+  <table class="articulos__table">
+    <thead class="articulos__table-head">
+      <tr class="articulos__table-row">
+        <th class="articulos__table-header">Nombre</th>
+        <th class="articulos__table-header">Descripción</th>
+        <th class="articulos__table-header">Categoría</th>
+        <th class="articulos__table-header">Precio</th>
+        <th class="articulos__table-header">Cantidad</th>
+        <th class="articulos__table-header">Acciones</th>
+      </tr>
+    </thead>
+    <tbody class="articulos__table-body">
+      @for (articulo of articulos; track articulo.id) {
+        <tr class="articulos__table-row">
+          <td class="articulos__table-cell">{{articulo.name}}</td>
+          <td class="articulos__table-cell">{{articulo.description}}</td>
+          <td class="articulos__table-cell">{{articulo.category.name || 'Sin categoría'}}</td>
+          <td class="articulos__table-cell articulos__table-cell--price">{{articulo.price}}</td>
+          <td class="articulos__table-cell articulos__table-cell--quantity">{{articulo.quantity}}</td>
+          <td class="articulos__table-cell articulos__table-cell--actions">
+            <div class="articulos__actions">
+              <a routerLink="/ver-articulo/{{articulo.id}}" class="articulos__action articulos__action--view">Ver</a>
+              <a routerLink="/modificar/{{articulo.id}}" class="articulos__action articulos__action--edit">Modificar</a>
+              <a routerLink="/borrar/{{articulo.id}}" class="articulos__action articulos__action--delete">Borrar</a>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

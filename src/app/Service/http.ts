@@ -9,7 +9,7 @@ import { Articulo } from '../Modelos/Articulo';
 export class Http {
   constructor(private Mihttp: HttpClient){}
 
-  urlProducts = ""
+  urlProducts = "/api/products"
 
   getAll(): Observable <Articulo[]> {
     return this.Mihttp.get<Articulo[]>(this.urlProducts)
