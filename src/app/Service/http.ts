@@ -38,4 +38,8 @@ export class Http {
     return this.Mihttp.get<Category[]>(this.urlCategories)
   }
 
+  getProductsByCategory(category: string): Observable<Articulo[]> {
+    return this.Mihttp.get<Articulo[]>(this.urlProducts + "/search/category/" + category)
+  }
+
 }

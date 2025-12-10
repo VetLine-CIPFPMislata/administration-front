@@ -33,7 +33,11 @@ export class Nuevo {
   ngOnInit(){
     this.http.getAllCategories().subscribe({
       next: (datos) => {
-        this.categorias = Array.isArray(datos) ? datos : (datos as any).content || (datos as any).data || [];
+        if (Array.isArray(datos)) {
+          this.categorias = datos;
+        } else {
+          this.categorias = [];
+        }
       },
       error: (error) => console.error('Error al cargar categorías:', error)
     });

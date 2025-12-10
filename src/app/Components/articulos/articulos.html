@@ -10,7 +10,7 @@
           class="articulos__filter-select">
           <option value="">Todas las categorías</option>
           @for (categoria of categorias; track categoria.id) {
-            <option [value]="categoria.id">{{categoria.name}}</option>
+            <option [value]="categoria.name">{{categoria.name}}</option>
           }
         </select>
       </div>

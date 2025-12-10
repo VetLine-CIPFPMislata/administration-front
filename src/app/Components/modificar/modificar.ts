@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Articulo } from '../../Modelos/Articulo';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Http } from '../../Service/http';
 import { FormsModule } from '@angular/forms';
 
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class Modificar {
   articulo!: Articulo;
-  constructor(private http: Http, private route: ActivatedRoute) {}
+  constructor(private http: Http, private route: ActivatedRoute, private router: Router) {}
   
   ngOnInit(){
     this.route.params.subscribe(
@@ -37,5 +37,6 @@ export class Modificar {
         }
       });
   }
+  this.router.navigate(['/articulos']);
 }
 }
