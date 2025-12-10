@@ -1,7 +1,25 @@
 <div class="articulos">
   <div class="articulos__header">
     <h1 class="articulos__title">Gestión de Artículos</h1>
+<<<<<<< HEAD
     <a routerLink="/nuevo" class="articulos__btn articulos__btn--nuevo">Nuevo artículo</a>
+=======
+    <div class="articulos__controls">
+      <div class="articulos__filter">
+        <label class="articulos__filter-label">Filtrar por categoría:</label>
+        <select 
+          [(ngModel)]="categoriaSeleccionada"
+          (change)="filtrarPorCategoria()"
+          class="articulos__filter-select">
+          <option value="">Todas las categorías</option>
+          @for (categoria of categorias; track categoria.id) {
+            <option [value]="categoria.id">{{categoria.name}}</option>
+          }
+        </select>
+      </div>
+      <a routerLink="/nuevo" class="articulos__btn articulos__btn--nuevo">Nuevo artículo</a>
+    </div>
+>>>>>>> feature/ImplProducts
   </div>
 
   <table class="articulos__table">
@@ -16,7 +34,11 @@
       </tr>
     </thead>
     <tbody class="articulos__table-body">
+<<<<<<< HEAD
       @for (articulo of articulos; track articulo.id) {
+=======
+      @for (articulo of articulosFiltrados; track articulo.id) {
+>>>>>>> feature/ImplProducts
         <tr class="articulos__table-row">
           <td class="articulos__table-cell">{{articulo.name}}</td>
           <td class="articulos__table-cell">{{articulo.description}}</td>

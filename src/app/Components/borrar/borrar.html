@@ -1,1 +1,44 @@
-<p>borrar works!</p>
+<div class="borrar-articulo">
+  @if (articulo) {
+    <div class="borrar-articulo__container">
+      <div class="borrar-articulo__header">
+        <h1 class="borrar-articulo__title">¿Eliminar artículo?</h1>
+        <p class="borrar-articulo__warning">Esta acción no se puede deshacer</p>
+      </div>
+
+      <div class="borrar-articulo__content">
+        <div class="borrar-articulo__info">
+          <div class="borrar-articulo__detail">
+            <span class="borrar-articulo__label">Nombre:</span>
+            <span class="borrar-articulo__value">{{articulo.name}}</span>
+          </div>
+
+          <div class="borrar-articulo__detail">
+            <span class="borrar-articulo__label">Descripción:</span>
+            <span class="borrar-articulo__value">{{articulo.description}}</span>
+          </div>
+
+          <div class="borrar-articulo__detail">
+            <span class="borrar-articulo__label">Categoría:</span>
+            <span class="borrar-articulo__value">{{articulo.category.name}}</span>
+          </div>
+
+          <div class="borrar-articulo__detail">
+            <span class="borrar-articulo__label">Precio:</span>
+            <span class="borrar-articulo__value">{{articulo.price}}€</span>
+          </div>
+
+          <div class="borrar-articulo__detail">
+            <span class="borrar-articulo__label">Cantidad:</span>
+            <span class="borrar-articulo__value">{{articulo.quantity}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="borrar-articulo__actions">
+        <a routerLink="/articulos" class="borrar-articulo__btn borrar-articulo__btn--cancel">Volver a artículos</a>
+        <button (click)="borrarArticulo()" class="borrar-articulo__btn borrar-articulo__btn--delete">Eliminar artículo</button>
+      </div>
+    </div>
+  }
+</div>

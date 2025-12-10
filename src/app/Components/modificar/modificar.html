@@ -1,1 +1,100 @@
-<p>modificar works!</p>
+<div class="modificar-articulo">
+  @if (articulo) {
+    <div class="modificar-articulo__container">
+      <div class="modificar-articulo__header">
+        <h1 class="modificar-articulo__title">Modificar artículo</h1>
+      </div>
+
+      <form class="modificar-articulo__form">
+        <div class="modificar-articulo__field">
+          <label class="modificar-articulo__label" for="name">Nombre:</label>
+          <input 
+            type="text"  
+            [(ngModel)]="articulo.name" 
+            name="name"
+            class="modificar-articulo__input"
+            required>
+        </div>
+
+        <div class="modificar-articulo__field">
+          <label class="modificar-articulo__label" for="description">Descripción:</label>
+          <textarea 
+            [(ngModel)]="articulo.description" 
+            name="description"
+            class="modificar-articulo__textarea"
+            rows="4"
+            required></textarea>
+        </div>
+
+        <div class="modificar-articulo__field">
+          <label class="modificar-articulo__label" for="category">Categoría:</label>
+          <input 
+            type="text" 
+            [(ngModel)]="articulo.category.name" 
+            name="category"
+            class="modificar-articulo__input"
+            required>
+        </div>
+
+        <div class="modificar-articulo__field">
+          <label class="modificar-articulo__label" for="basePrice">Precio Base:</label>
+          <input 
+            type="number" 
+            [(ngModel)]="articulo.basePrice" 
+            name="basePrice"
+            class="modificar-articulo__input"
+            step="0.01"
+            required>
+        </div>
+
+        <div class="modificar-articulo__field">
+          <label class="modificar-articulo__label" for="discountPercentage">Descuento (%):</label>
+          <input 
+            type="number" 
+            [(ngModel)]="articulo.discountPercentage" 
+            name="discountPercentage"
+            class="modificar-articulo__input"
+            step="0.01"
+            min="0"
+            max="100">
+        </div>
+
+        <div class="modificar-articulo__field">
+          <label class="modificar-articulo__label" for="price">Precio Final:</label>
+          <input 
+            type="number" 
+            [(ngModel)]="articulo.price" 
+            name="price"
+            class="modificar-articulo__input"
+            required>
+        </div>
+
+        <div class="modificar-articulo__field">
+          <label class="modificar-articulo__label" for="quantity">Cantidad:</label>
+          <input 
+            type="number" 
+            [(ngModel)]="articulo.quantity" 
+            name="quantity"
+            class="modificar-articulo__input"
+            min="0"
+            required>
+        </div>
+
+        <div class="modificar-articulo__field">
+          <label class="modificar-articulo__label" for="image">URL Imagen:</label>
+          <input 
+            type="text" 
+            [(ngModel)]="articulo.image" 
+            name="image"
+            class="modificar-articulo__input">
+        </div>
+
+        <div class="modificar-articulo__actions">
+          <a routerLink="/articulos" class="modificar-articulo__btn modificar-articulo__btn--cancel">Volver</a>
+          <button type="button" (click)="modificarArticulo()" class="modificar-articulo__btn modificar-articulo__btn--submit"
+                                routerLink="/articulos">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  }
+</div>

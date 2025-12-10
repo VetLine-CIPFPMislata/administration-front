@@ -9,5 +9,6 @@ export interface Articulo {
     quantity: number,
     price: number,
     discountPercentage: number,
-    basePrice: number
+    basePrice: number,
+    rating: number
 }

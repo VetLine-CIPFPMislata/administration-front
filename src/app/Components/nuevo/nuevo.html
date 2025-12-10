@@ -1,1 +1,77 @@
-<p>nuevo works!</p>
+<div class="nuevo-articulo">
+  <div class="nuevo-articulo__container">
+    <div class="nuevo-articulo__header">
+      <h1 class="nuevo-articulo__title">Crear nuevo artículo</h1>
+    </div>
+
+    <form class="nuevo-articulo__form">
+      <div class="nuevo-articulo__field">
+        <label class="nuevo-articulo__label">Nombre:</label>
+        <input 
+          [(ngModel)]="articulo.name"
+          name="name"
+          class="nuevo-articulo__input">
+      </div>
+
+      <div class="nuevo-articulo__field">
+        <label class="nuevo-articulo__label">Descripción:</label>
+        <textarea 
+          [(ngModel)]="articulo.description"
+          name="description"
+          class="nuevo-articulo__textarea"
+          rows="4"></textarea>
+      </div>
+
+      <div class="nuevo-articulo__field">
+        <label class="nuevo-articulo__label">Categoría:</label>
+        <select 
+          [(ngModel)]="articulo.category.id"
+          name="category"
+          class="nuevo-articulo__select">
+          <option value="">Selecciona una categoría</option>
+          @for (categoria of categorias; track categoria.id) {
+            <option [value]="categoria.id">{{categoria.name}}</option>
+          }
+        </select>
+      </div>
+
+      <div class="nuevo-articulo__field">
+        <label class="nuevo-articulo__label">Precio Base:</label>
+        <input 
+          [(ngModel)]="articulo.basePrice"
+          name="basePrice"
+          class="nuevo-articulo__input">
+      </div>
+
+      <div class="nuevo-articulo__field">
+        <label class="nuevo-articulo__label">Descuento (%):</label>
+        <input 
+          [(ngModel)]="articulo.discountPercentage"
+          name="discountPercentage"
+          class="nuevo-articulo__input">
+      </div>
+
+
+      <div class="nuevo-articulo__field">
+        <label class="nuevo-articulo__label">Cantidad:</label>
+        <input 
+          [(ngModel)]="articulo.quantity"
+          name="quantity"
+          class="nuevo-articulo__input">
+      </div>
+
+      <div class="nuevo-articulo__field">
+        <label class="nuevo-articulo__label">URL Imagen:</label>
+        <input 
+          [(ngModel)]="articulo.image"
+          name="image"
+          class="nuevo-articulo__input">
+      </div>
+
+      <div class="nuevo-articulo__actions">
+        <a routerLink="/articulos" class="nuevo-articulo__btn nuevo-articulo__btn--cancel">Volver</a>
+        <button (click)="crearArticulo()" class="nuevo-articulo__btn nuevo-articulo__btn--submit">Crear artículo</button>
+      </div>
+    </form>
+  </div>
+</div>

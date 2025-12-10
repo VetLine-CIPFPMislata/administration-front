@@ -1,1 +1,53 @@
-<p>ver-articulo works!</p>
+<div class="ver-articulo">
+  @if (articulo) {
+    <div class="ver-articulo__container">
+      <div class="ver-articulo__header">
+        <h1 class="ver-articulo__title">{{articulo.name}}</h1>
+      </div>
+
+      <div class="ver-articulo__content">
+        <div class="ver-articulo__image-wrapper">
+          <img [src]="articulo.image" [alt]="articulo.name" class="ver-articulo__image">
+        </div>
+
+        <div class="ver-articulo__details">
+          <div class="ver-articulo__detail">
+            <span class="ver-articulo__label">Descripción:</span>
+            <p class="ver-articulo__value">{{articulo.description}}</p>
+          </div>
+
+          <div class="ver-articulo__detail">
+            <span class="ver-articulo__label">Categoría:</span>
+            <span class="ver-articulo__value">{{articulo.category.name}}</span>
+          </div>
+
+          <div class="ver-articulo__detail">
+            <span class="ver-articulo__label">Precio Base:</span>
+            <span class="ver-articulo__value ver-articulo__value--price">{{articulo.basePrice}}€</span>
+          </div>
+
+          <div class="ver-articulo__detail">
+            <span class="ver-articulo__label">Descuento:</span>
+            <span class="ver-articulo__value ver-articulo__value--discount">{{articulo.discountPercentage}}%</span>
+          </div>
+
+          <div class="ver-articulo__detail">
+            <span class="ver-articulo__label">Precio Final:</span>
+            <span class="ver-articulo__value ver-articulo__value--final-price">{{articulo.price}}€</span>
+          </div>
+
+          <div class="ver-articulo__detail">
+            <span class="ver-articulo__label">Cantidad disponible:</span>
+            <span class="ver-articulo__value ver-articulo__value--quantity">{{articulo.quantity}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ver-articulo__actions">
+        <a routerLink="/articulos" class="ver-articulo__btn ver-articulo__btn--back">Volver</a>
+        <a routerLink="/modificar/{{articulo.id}}" class="ver-articulo__btn ver-articulo__btn--edit">Modificar</a>
+        <a routerLink="/borrar/{{articulo.id}}" class="ver-articulo__btn ver-articulo__btn--delete">Borrar</a>
+      </div>
+    </div>
+  }
+</div>
