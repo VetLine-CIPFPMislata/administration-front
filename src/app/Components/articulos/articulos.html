@@ -2,18 +2,16 @@
   <div class="articulos__header">
     <h1 class="articulos__title">Gestión de Artículos</h1>
     <div class="articulos__controls">
-      <div class="articulos__filter">
-        <label class="articulos__filter-label">Filtrar por categoría:</label>
-        <select 
-          [(ngModel)]="categoriaSeleccionada"
-          (change)="filtrarPorCategoria()"
-          class="articulos__filter-select">
-          <option value="">Todas las categorías</option>
-          @for (categoria of categorias; track categoria.id) {
-            <option [value]="categoria.name">{{categoria.name}}</option>
-          }
-        </select>
-      </div>
+      <label class="articulos__filter-label">Filtrar por categoría:</label>
+      <select 
+        [(ngModel)]="categoriaSeleccionada"
+        (change)="filtrarPorCategoria()"
+        class="articulos__filter-select">
+        <option value="">Todas las categorías</option>
+        @for (categoria of categorias; track categoria.id) {
+          <option [value]="categoria.name">{{categoria.name}}</option>
+        }
+      </select>
       <a routerLink="/nuevo" class="articulos__btn articulos__btn--nuevo">Nuevo artículo</a>
     </div>
   </div>
@@ -21,9 +19,9 @@
   <table class="articulos__table">
     <thead class="articulos__table-head">
       <tr class="articulos__table-row">
-        <th class="articulos__table-header">Nombre</th>
-        <th class="articulos__table-header">Descripción</th>
-        <th class="articulos__table-header">Categoría</th>
+        <th class="articulos__table-header articulos__table-header--left">Nombre</th>
+        <th class="articulos__table-header articulos__table-header--left">Descripción</th>
+        <th class="articulos__table-header articulos__table-header--left">Categoría</th>
         <th class="articulos__table-header">Precio</th>
         <th class="articulos__table-header">Cantidad</th>
         <th class="articulos__table-header">Acciones</th>
@@ -32,9 +30,9 @@
     <tbody class="articulos__table-body">
       @for (articulo of articulosFiltrados; track articulo.id) {
         <tr class="articulos__table-row">
-          <td class="articulos__table-cell">{{articulo.name}}</td>
-          <td class="articulos__table-cell">{{articulo.description}}</td>
-          <td class="articulos__table-cell">{{articulo.category.name || 'Sin categoría'}}</td>
+          <td class="articulos__table-cell articulos__table-cell--left">{{articulo.name}}</td>
+          <td class="articulos__table-cell articulos__table-cell--left">{{articulo.productDescription}}</td>
+          <td class="articulos__table-cell articulos__table-cell--left">{{articulo.category.name || 'Sin categoría'}}</td>
           <td class="articulos__table-cell articulos__table-cell--price">{{articulo.price}}</td>
           <td class="articulos__table-cell articulos__table-cell--quantity">{{articulo.quantity}}</td>
           <td class="articulos__table-cell articulos__table-cell--actions">

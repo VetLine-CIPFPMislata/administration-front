@@ -6,15 +6,16 @@ $colores:(
     'amarillo': (#FEFDEF, #FDFADE, #FCF8CE, #FBF6BE, #F9F19D, #F7ED7D, #F5E85C, #CCC14A, #A39A38, #797226, #655F1D, #504B14, #3C380B, #272402)
 );
 
-$padding:(f2px,4px,8px,16px,24px,32px,40px,48px,56px,64px);
+$padding:(2px,4px,8px,16px,24px,32px,40px,48px,56px,64px);
 $margin:(2px,4px,8px,16px,24px,32px,40px,48px,56px,64px);
 $border-radius:(2px,4px,8px,16px,24px,32px,40px,48px,56px,64px);
 $font-size:(12px,14px,16px,18px,20px,24px,28px,32px,36px,40px);
+$font-weight:(300,400,500,600,700,800,900,1000,1100,1200,1300);
 $box-shadow:(none, 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 5px 10px rgba(0, 0, 0, 0.2), 0px 10px 20px rgba(0, 0, 0, 0.2)); 
 $font-families:(
     'header': (istokWeb, sans-serif),
     'Article': (PoetsenOne, sans-serif)
 );
 $gap:(4px,8px,16px,24px,32px,40px,48px,56px,64px);
-$widths:(10px, 20px, 30px ,50px ,100px,150px,200px,250px,300px,350px,400px,450px,500px);
-$height:(10px, 20px, 30px, 50px ,100px,150px,200px,250px,300px,350px,400px,450px,500px);
+$widths:(10px, 20px, 30px ,50px ,100px,150px,200px,250px,300px,350px,400px,450px,500px, 600px,700px,800px,900px);
+$height:(10px, 20px, 30px, 50px ,100px,150px,200px,250px,300px,350px,400px,450px,500px, 600px,700px,800px,900px);

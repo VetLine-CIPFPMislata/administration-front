@@ -18,9 +18,9 @@ export class Nuevo {
   articulo: Articulo = {
     id: '',
     name: '',
-    description: '',
+    productDescription: '',
     category: { id: '', name: '', description: '' },
-    image: '',
+    pictureProduct: '',
     quantity: 0,
     price: 0,
     discountPercentage: 0,
@@ -53,9 +53,9 @@ export class Nuevo {
     
     const articulo = {
       name: this.articulo.name,
-      productDescription: this.articulo.description,
+      productDescription: this.articulo.productDescription,
       category: selectedCategory,
-      pictureProduct: this.articulo.image,
+      pictureProduct: this.articulo.pictureProduct,
       quantity: Number(this.articulo.quantity),
       basePrice: basePriceNum,
       discountPercentage: Number(this.articulo.discountPercentage)
