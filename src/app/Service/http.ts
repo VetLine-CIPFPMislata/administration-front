@@ -14,6 +14,7 @@ export class Http {
   urlCategories = "/api/categories"
   // ng serve --proxy-config proxy.conf.json
 
+
   getAll(): Observable <Articulo[]> {
     return this.Mihttp.get<Articulo[]>(this.urlProducts + "?size=100")
   }
@@ -40,6 +41,21 @@ export class Http {
 
   getProductsByCategory(category: string): Observable<Articulo[]> {
     return this.Mihttp.get<Articulo[]>(this.urlProducts + "/search/category/" + category)
+  }
+
+  getCategoryById(id: string): Observable<Category> {
+    return this.Mihttp.get<Category>(this.urlCategories + "/" + id);
+  }
+  getCategoryByName(name: string): Observable<Category> {
+    return this.Mihttp.get<Category>(this.urlCategories + "/search/" + name);
+  }
+
+  deleteCategory(id: string): Observable<Category> {
+    return this.Mihttp.delete<Category>(this.urlCategories + "/" + id);
+  }
+
+  createCategory(category: Category) {
+    return this.Mihttp.post<Category>(this.urlCategories, category);
   }
 
 }
