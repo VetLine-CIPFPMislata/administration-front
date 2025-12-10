@@ -1,0 +1,43 @@
+.c-footer {
+	background: var(--mls-sys-color-secundario-6);
+	color: var(--mls-sys-color-gris-11);
+	padding: var(--mls-sys-padding-4) var(--mls-sys-padding-5);
+    
+
+	&__inner {
+        
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		gap: var(--mls-sys-gap-3);
+		justify-content: space-between;
+	}
+
+	&__logo {
+		width: var(--mls-sys-width-4);
+	}
+
+	&__content {
+		flex: 1;
+		text-align: right;
+	}
+
+	&__text {
+		margin: 0;
+		font-size: var(--mls-sys-font-size-3);
+        font-family: var(--mls-sys-font-PoetsenOne, sans-serif);
+	}
+}
+
+@media (max-width: 600px) {
+	.site-footer__inner {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.site-footer__content {
+		text-align: center;
+		margin-top: 8px;
+	}
+}
