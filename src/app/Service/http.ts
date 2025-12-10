@@ -11,11 +11,8 @@ export class Http {
   constructor(private Mihttp: HttpClient){}
 
   urlProducts = "/api/products"
-<<<<<<< HEAD
-=======
   urlCategories = "/api/categories"
   // ng serve --proxy-config proxy.conf.json
->>>>>>> feature/ImplProducts
 
   getAll(): Observable <Articulo[]> {
     return this.Mihttp.get<Articulo[]>(this.urlProducts + "?size=100")
