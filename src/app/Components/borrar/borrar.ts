@@ -36,6 +36,7 @@ export class Borrar {
         }
       });
     }
+    this.http.getAll();
     this.router.navigate(['/articulos']);
 }
 }

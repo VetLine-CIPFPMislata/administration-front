@@ -45,6 +45,8 @@
   --nuevo-articulo-actions-border-color: var(--mls-sys-color-primario-5);
   --nuevo-articulo-actions-margin-top: var(--mls-sys-gap-3);
   --nuevo-articulo-btn-hover-shadow: var(--mls-sys-box-shadow-3);
+  --nuevo-articulo-container-width: var(--mls-sys-width-16);
+  --nuevo-articulo-textarea-min-height: var(--mls-sys-height-5);
 
   padding: var(--nuevo-articulo-padding);
   background-color: var(--nuevo-articulo-bg-color);
@@ -54,7 +56,7 @@
   justify-content: center;
 
   &__container {
-    max-width: 800px;
+    max-width: var(--nuevo-articulo-container-width);
     width: 100%;
     background-color: var(--nuevo-articulo-container-bg);
     border-radius: var(--nuevo-articulo-border-radius);
@@ -64,7 +66,6 @@
 
   &__header {
     margin-bottom: var(--nuevo-articulo-gap);
-    border-bottom: 3px solid var(--nuevo-articulo-header-border-color);
     padding-bottom: var(--nuevo-articulo-header-padding-bottom);
     background: var(--nuevo-articulo-header-bg);
     padding: var(--nuevo-articulo-header-padding);
@@ -72,7 +73,6 @@
   }
 
   &__title {
-    margin: 0;
     font-size: var(--nuevo-articulo-title-font-size);
     color: var(--nuevo-articulo-title-color);
     font-weight: var(--nuevo-articulo-title-font-weight);
@@ -95,7 +95,6 @@
 
     &:hover {
       background-color: var(--nuevo-articulo-field-hover-bg);
-      border-left: 4px solid var(--nuevo-articulo-field-hover-border-color);
     }
   }
 
@@ -109,7 +108,6 @@
   &__textarea,
   &__select {
     padding: var(--nuevo-articulo-btn-padding-y) var(--nuevo-articulo-field-padding);
-    border: 2px solid var(--nuevo-articulo-input-border-color);
     border-radius: var(--nuevo-articulo-input-border-radius);
     background-color: var(--nuevo-articulo-input-bg);
     font-size: var(--nuevo-articulo-input-font-size);
@@ -118,7 +116,6 @@
     &:focus {
       outline: none;
       border-color: var(--nuevo-articulo-input-focus-border);
-      box-shadow: 0 0 0 3px var(--nuevo-articulo-input-focus-shadow);
     }
 
     &:hover {
@@ -128,7 +125,7 @@
 
   &__textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: var(--nuevo-articulo-textarea-min-height);
   }
 
   &__actions {

@@ -196,49 +196,39 @@
     }
   }
 
-  &__actions {
-    display: flex;
-    gap: var(--articulos-actions-gap);
-    justify-content: center;
-  }
-
-  &__action {
-    padding: var(--articulos-action-padding-y) var(--articulos-action-padding-x);
-    font-size: var(--articulos-action-font-size);
-    font-weight: var(--articulos-action-font-weight);
-    border-radius: var(--articulos-action-border-radius);
+  &__name-link {
+    color: var(--articulos-table-cell-color);
     text-decoration: none;
+    font-weight: var(--articulos-label-font-weight);
     transition: all 0.3s ease;
     cursor: pointer;
 
-    &--view {
-      background-color: var(--articulos-action-view-bg);
-      color: var(--articulos-action-view-color);
-
-      &:hover {
-        background-color: var(--articulos-action-view-hover-bg);
-        transform: scale(1.05);
-      }
+    &:hover {
+      color: var(--articulos-action-edit-bg);
+      text-decoration: underline;
     }
+  }
 
-    &--edit {
-      background-color: var(--articulos-action-edit-bg);
-      color: var(--articulos-action-edit-color);
+  &__delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
 
-      &:hover {
-        background-color: var(--articulos-action-edit-hover-bg);
-        transform: scale(1.05);
-      }
+    &:hover {
+      transform: scale(1.1);
     }
+  }
 
-    &--delete {
-      background-color: var(--articulos-action-delete-bg);
-      color: var(--articulos-action-delete-color);
+  &__delete-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
 
-      &:hover {
-        background-color: var(--articulos-action-delete-hover-bg);
-        transform: scale(1.05);
-      }
+    &:hover {
+      opacity: 1;
     }
   }
 }

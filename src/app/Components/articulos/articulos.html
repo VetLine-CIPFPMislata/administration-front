@@ -20,7 +20,6 @@
     <thead class="articulos__table-head">
       <tr class="articulos__table-row">
         <th class="articulos__table-header articulos__table-header--left">Nombre</th>
-        <th class="articulos__table-header articulos__table-header--left">Descripción</th>
         <th class="articulos__table-header articulos__table-header--left">Categoría</th>
         <th class="articulos__table-header">Precio</th>
         <th class="articulos__table-header">Cantidad</th>
@@ -30,17 +29,16 @@
     <tbody class="articulos__table-body">
       @for (articulo of articulosFiltrados; track articulo.id) {
         <tr class="articulos__table-row">
-          <td class="articulos__table-cell articulos__table-cell--left">{{articulo.name}}</td>
-          <td class="articulos__table-cell articulos__table-cell--left">{{articulo.productDescription}}</td>
+          <td class="articulos__table-cell articulos__table-cell--left">
+            <a routerLink="/modificar/{{articulo.id}}" class="articulos__name-link">{{articulo.name}}</a>
+          </td>
           <td class="articulos__table-cell articulos__table-cell--left">{{articulo.category.name || 'Sin categoría'}}</td>
-          <td class="articulos__table-cell articulos__table-cell--price">{{articulo.price}}</td>
+          <td class="articulos__table-cell articulos__table-cell--price">{{formatPrice(articulo.price) + " €"}}</td>
           <td class="articulos__table-cell articulos__table-cell--quantity">{{articulo.quantity}}</td>
           <td class="articulos__table-cell articulos__table-cell--actions">
-            <div class="articulos__actions">
-              <a routerLink="/ver-articulo/{{articulo.id}}" class="articulos__action articulos__action--view">Ver</a>
-              <a routerLink="/modificar/{{articulo.id}}" class="articulos__action articulos__action--edit">Modificar</a>
-              <a routerLink="/borrar/{{articulo.id}}" class="articulos__action articulos__action--delete">Borrar</a>
-            </div>
+            <a routerLink="/borrar/{{articulo.id}}" class="articulos__delete-btn">
+              <img src="icons8-papelera-100.png" alt="Eliminar" class="articulos__delete-icon">
+            </a>
           </td>
         </tr>
       }
