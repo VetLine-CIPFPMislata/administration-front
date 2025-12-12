@@ -13,6 +13,7 @@
   --header-link-padding-x: var(--mls-sys-padding-3);
   --header-logo-height: var(--mls-sys-height-4);
   --header-icon-height: var(--mls-sys-height-3);
+  --header-font-family: var(--mls-sys-font-header, sans-serif);
 
   display: flex;
   align-items: center;
@@ -20,6 +21,7 @@
   padding: var(--header-padding);
   background-color: var(--header-bg-color);
   box-shadow: var(--header-shadow);
+  font-family: var(--header-font-family);
 
   &__left {
     display: flex;

@@ -1,19 +1,21 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { Http } from '../../Service/http';
 import { Category } from '../../Modelos/Category';
 import { RouterLink } from "@angular/router";
 import { Subject} from 'rxjs';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatIcon } from '@angular/material/icon';
+
 
 
 @Component({
   selector: 'app-categorias',
   imports: [RouterLink,
-    MatDialogModule
+    MatDialogModule,
+    MatIcon
   ],
   templateUrl: './categorias.html',
-  styleUrl: './categorias.scss',
+  styleUrls: ['./categorias.scss'],
 })
 export class Categorias {
   categorias: Category[] = [];

@@ -8,7 +8,7 @@ import { Category } from '../../Modelos/Category';
   selector: 'app-nuevo-category',
   imports: [FormsModule],
   templateUrl: './nuevo-category.html',
-  styleUrl: './nuevo-category.scss',
+  styleUrls: ['./nuevo-category.scss'],
 })
 export class NuevoCategory {
   miHttp = inject(Http);

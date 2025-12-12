@@ -1,19 +1,20 @@
 <section class="nuevo-category">
-	<h2>Crear categoría</h2>
+	<h2 class="nuevo-category__header">Crear categoría</h2>
 
-	<form >
-		<div>
-			<label for="name">Nombre</label>
-			<input id="name" name="name" [(ngModel)]="name" required/>
+	<form class="nuevo-category__form">
+		<div class="nuevo-category__field">
+			<label class="nuevo-category__label" for="name">Nombre</label>
+			<input class="nuevo-category__input" id="name" name="name" [(ngModel)]="name" required />
 		</div>
 
-		<div>
-			<label for="description">Descripción</label>
-			<input id="description" name="description" [(ngModel)]="description" required/>
+		<div class="nuevo-category__field">
+			<label class="nuevo-category__label" for="description">Descripción</label>
+			<input class="nuevo-category__input" id="description" name="description" [(ngModel)]="description" required />
 		</div>
-		<div class="actions">
-			<button type="button" (click)="cancelar()">Cancelar</button>
-			<button type="button" [disabled]="desactivado" (click)="crearCategoria()">Guardar</button>
+
+		<div class="nuevo-category__actions">
+			<button class="nuevo-category__btn nuevo-category__btn--cancel" type="button" (click)="cancelar()">Cancelar</button>
+			<button class="nuevo-category__btn nuevo-category__btn--save" type="button" [disabled]="desactivado" (click)="crearCategoria()">Guardar</button>
 		</div>
 	</form>
 </section>

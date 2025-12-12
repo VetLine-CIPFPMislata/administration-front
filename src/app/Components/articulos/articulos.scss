@@ -64,11 +64,15 @@
   --articulos-action-font-size: var(--mls-sys-font-size-3);
   --articulos-action-font-weight: var(--mls-sys-font-weight-4);
   --articulos-action-border-radius: var(--mls-sys-border-radius-2);
+  --articulos-min-height: calc(100vh - (var(--mls-sys-padding-3)) + var(--mls-sys-padding-4) + 8px);
+  --articulos-font-family: var(--mls-sys-font-header, sans-serif);
 
   padding: var(--articulos-container-padding);
   background-color: var(--articulos-bg-color);
-  min-height: 100vh;
 
+  min-height: var(--articulos-action-min-height);
+  padding-bottom: calc(var(--mls-sys-font-size-3) + (var(--mls-sys-padding-4) * 2) + 8px);
+  font-family: var(--articulos-font-family);
   &__header {
     margin-bottom: var(--articulos-gap);
     padding: var(--articulos-header-padding);

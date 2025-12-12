@@ -1,43 +1,61 @@
 .c-footer {
-	background: var(--mls-sys-color-secundario-6);
-	color: var(--mls-sys-color-gris-11);
-	padding: var(--mls-sys-padding-4) var(--mls-sys-padding-5);
     
+    --c-footer-bg: var(--mls-sys-color-secundario-6);
+    --c-footer-text: var(--mls-sys-color-gris-11);
+    --c-margin-3: var(--mls-sys-margin-3);
+    --c-footer-pad-y: var(--mls-sys-padding-2);
+    --c-footer-pad-x: var(--mls-sys-padding-4);
+    --c-footer-gap: var(--mls-sys-gap-3);
+    --c-footer-logo-width: var(--mls-sys-width-4);
+    --c-footer-font-size: var(--mls-sys-font-size-3);
+    --c-footer-font-family: var(--mls-sys-font-PoetsenOne, sans-serif);
 
-	&__inner {
-        
-		margin: 0 auto;
-		display: flex;
-		align-items: center;
-		gap: var(--mls-sys-gap-3);
-		justify-content: space-between;
-	}
+    background: var(--c-footer-bg);
+    color: var(--c-footer-text);
+    padding: var(--c-footer-pad-y) var(--c-footer-pad-x);
 
-	&__logo {
-		width: var(--mls-sys-width-4);
-	}
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
 
-	&__content {
-		flex: 1;
-		text-align: right;
-	}
+    &__inner {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: var(--c-footer-gap);
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
 
-	&__text {
-		margin: 0;
-		font-size: var(--mls-sys-font-size-3);
-        font-family: var(--mls-sys-font-PoetsenOne, sans-serif);
-	}
+    &__logo {
+        width: var(--c-footer-logo-width);
+    }
+
+    &__content {
+        flex: 1;
+        text-align: right;
+    }
+
+    &__text {
+        margin: 0;
+        font-size: var(--c-footer-font-size);
+        font-family: var(--c-footer-font-family);
+    }
 }
 
 @media (max-width: 600px) {
-	.site-footer__inner {
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-	}
+    .site-footer__inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-	.site-footer__content {
-		text-align: center;
-		margin-top: 8px;
-	}
+    .site-footer__content {
+        text-align: center;
+        margin-top: var(--c-margin-3);
+    }
 }
