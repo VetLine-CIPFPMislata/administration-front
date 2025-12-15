@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Articulo } from '../Modelos/Articulo';
@@ -9,6 +9,14 @@ import { Category } from '../Modelos/Category';
 })
 export class Http {
   constructor(private Mihttp: HttpClient){}
+
+  private getAuthHeaders(): HttpHeaders {
+    const token = localStorage.getItem('authToken');
+    return new HttpHeaders({
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    });
+  }
 
   urlProducts = "/api/products"
   urlCategories = "/api/categories"
@@ -24,15 +32,15 @@ export class Http {
   }
 
   DeleteById(id: String): Observable <Articulo> {
-    return this.Mihttp.delete<Articulo>(this.urlProducts + "/" + id) 
+    return this.Mihttp.delete<Articulo>(this.urlProducts + "/" + id, { headers: this.getAuthHeaders() }) 
   }
 
   ModificarById(id: String, articulo: Articulo): Observable <Articulo>{
-    return this.Mihttp.put<Articulo>(this.urlProducts + "/" + id, articulo)
+    return this.Mihttp.put<Articulo>(this.urlProducts + "/" + id, articulo, { headers: this.getAuthHeaders() })
   }
 
   Nuevo(articulo: Articulo) {
-    return this.Mihttp.post<Articulo>(this.urlProducts, articulo)
+    return this.Mihttp.post<Articulo>(this.urlProducts, articulo, { headers: this.getAuthHeaders() })
   }
 
   getAllCategories(): Observable<Category[]> {
@@ -51,11 +59,11 @@ export class Http {
   }
 
   deleteCategory(id: string): Observable<Category> {
-    return this.Mihttp.delete<Category>(this.urlCategories + "/" + id);
+    return this.Mihttp.delete<Category>(this.urlCategories + "/" + id, { headers: this.getAuthHeaders() });
   }
 
   createCategory(category: Category) {
-    return this.Mihttp.post<Category>(this.urlCategories, category);
+    return this.Mihttp.post<Category>(this.urlCategories, category, { headers: this.getAuthHeaders() });
   }
 
 }

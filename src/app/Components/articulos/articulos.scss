@@ -65,7 +65,7 @@
   --articulos-action-font-weight: var(--mls-sys-font-weight-4);
   --articulos-action-border-radius: var(--mls-sys-border-radius-2);
   --articulos-min-height: calc(100vh - (var(--mls-sys-padding-3)) + var(--mls-sys-padding-4) + 8px);
-  --articulos-font-family: var(--mls-sys-font-header, sans-serif);
+  --articulos-font-family: var(--mls-sys-font-header);
 
   padding: var(--articulos-container-padding);
   background-color: var(--articulos-bg-color);
