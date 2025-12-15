@@ -33,6 +33,7 @@
   --login-header-padding-bottom: var(--mls-sys-padding-4);
   --login-header-border-color: var(--mls-sys-color-primario-5);
   --login-logo-width: var(--mls-sys-width-8);
+  --max-login-container-width: var(--mls-sys-width-12);
 
   display: flex;
   align-items: center;
@@ -42,7 +43,7 @@
   background-color: var(--login-bg-color);
 
   &__container {
-    max-width: 450px;
+    max-width: var(--max-login-container-width);
     width: 100%;
     background-color: var(--login-container-bg);
     border-radius: var(--login-border-radius);
@@ -111,7 +112,6 @@
     &:focus {
       outline: none;
       border-color: var(--login-input-focus-border);
-      box-shadow: 0 0 0 3px var(--login-input-focus-shadow);
     }
 
     &::placeholder {
