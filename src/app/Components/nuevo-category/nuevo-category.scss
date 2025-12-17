@@ -41,13 +41,14 @@
   --nuevo-category-box-shadow-3: var(--mls-sys-box-shadow-3);
 
   --nuevo-category-font-header: var(--mls-sys-font-header, sans-serif);
+  --nuevo-category-font-article: var(--mls-sys-font-Article, sans-serif);
 
   display: block;
   max-width: var(--nuevo-category-max-width);
   margin: var(--nuevo-category-pad-lg) auto;
   
   padding: var(--nuevo-category-pad-md);
-  font-family: 'IstokWeb', var(--nuevo-category-font-header);
+  font-family: var(--nuevo-category-font-article);
 
   &__header {
     background: var(--nuevo-category-secundario-6);
@@ -119,6 +120,7 @@
     background-color: var(--nuevo-category-gris-1); 
     color: var(--nuevo-category-gris-12);
     border-color: var(--nuevo-category-primario-6);
+    
    }
   &__btn--save { 
     border: none;

@@ -35,6 +35,7 @@
 	--categories-rojo-6: var(--mls-sys-color-rojo-6);
 
 	--categories-font-family: var(--mls-sys-font-header, sans-serif);
+	--categories-font-family-article: var(--mls-sys-font-Article, sans-serif);
 
 	--categories-box-shadow-sm: var(--mls-sys-box-shadow-1);
 	--categories-box-shadow-md: var(--mls-sys-box-shadow-2);
@@ -49,7 +50,7 @@
 
 	display: block;
 	padding: var(--categories-pad-x-lg);
-	font-family: var(--categories-font-family);
+	font-family: var(--categories-font-family-article);
 
 	&__toolbar {
 		display: flex;

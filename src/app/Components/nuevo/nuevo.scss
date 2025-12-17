@@ -47,6 +47,8 @@
   --nuevo-articulo-btn-hover-shadow: var(--mls-sys-box-shadow-3);
   --nuevo-articulo-container-width: var(--mls-sys-width-16);
   --nuevo-articulo-textarea-min-height: var(--mls-sys-height-5);
+  --nuevo-articulo-font-family-Article: var(--mls-sys-font-Article, sans-serif);
+  --nuevo-articulo-font-family-header: var(--mls-sys-font-header, sans-serif);
 
   padding: var(--nuevo-articulo-padding);
   background-color: var(--nuevo-articulo-bg-color);
@@ -76,6 +78,7 @@
     font-size: var(--nuevo-articulo-title-font-size);
     color: var(--nuevo-articulo-title-color);
     font-weight: var(--nuevo-articulo-title-font-weight);
+    font-family: var(--nuevo-articulo-font-family-Article);
   }
 
   &__form {
@@ -92,6 +95,7 @@
     background-color: var(--nuevo-articulo-field-bg);
     border-radius: var(--nuevo-articulo-field-border-radius);
     transition: all 0.3s ease;
+    font-family: var(--nuevo-articulo-font-family-Article);
 
     &:hover {
       background-color: var(--nuevo-articulo-field-hover-bg);
@@ -141,6 +145,7 @@
     padding: var(--nuevo-articulo-btn-padding-y) var(--nuevo-articulo-btn-padding-x);
     font-size: var(--nuevo-articulo-btn-font-size);
     font-weight: var(--nuevo-articulo-btn-font-weight);
+    font-family: var(--nuevo-articulo-font-family-Article);
     border-radius: var(--nuevo-articulo-btn-border-radius);
     text-decoration: none;
     cursor: pointer;
