@@ -1,7 +1,7 @@
 .articulos {
   --articulos-bg-color: var(--mls-sys-color-primario-1);
-  --articulos-container-padding: var(--mls-sys-padding-5);
-  --articulos-gap: var(--mls-sys-gap-4);
+  --articulos-container-padding: var(--mls-sys-padding-4);
+  --articulos-gap: var(--mls-sys-gap-3);
   --articulos-border-radius: var(--mls-sys-border-radius-4);
   --articulos-shadow: var(--mls-sys-box-shadow-4);
   --articulos-title-color: var(--mls-sys-color-primario-10);
@@ -10,20 +10,20 @@
   --articulos-label-font-size: var(--mls-sys-font-size-4);
   --articulos-label-font-weight: var(--mls-sys-font-weight-4);
   --articulos-select-padding: var(--mls-sys-padding-2);
-  --articulos-select-bg: var(--mls-sys-color-primario-2);
-  --articulos-select-color: var(--mls-sys-color-gris-13);
+  --articulos-select-bg: var(--mls-sys-color-blanco-3);
   --articulos-select-border: var(--mls-sys-color-primario-5);
-  --articulos-select-focus-border: var(--mls-sys-color-primario-9);
+  --articulos-select-focus-border: var(--mls-sys-color-secundario-11);
   --articulos-btn-padding-y: var(--mls-sys-padding-2);
   --articulos-btn-padding-x: var(--mls-sys-padding-4);
   --articulos-btn-font-size: var(--mls-sys-font-size-4);
   --articulos-btn-font-weight: var(--mls-sys-font-weight-4);
   --articulos-btn-border-radius: var(--mls-sys-border-radius-3);
-  --articulos-btn-nuevo-bg: var(--mls-sys-color-primario-7);
-  --articulos-btn-nuevo-color: var(--mls-sys-color-gris-1);
-  --articulos-btn-nuevo-hover-bg: var(--mls-sys-color-primario-9);
+  --articulos-btn-border-color: var(--mls-sys-color-secundario-10);
+  --articulos-btn-nuevo-bg: var(--mls-sys-color-primario-3);
+  --articulos-btn-nuevo-color: var(--mls-sys-color-gris-15);
+  --articulos-btn-nuevo-hover-bg: var(--mls-sys-color-secundario-9);
   --articulos-table-bg: var(--mls-sys-color-gris-1);
-  --articulos-table-header-bg: var(--mls-sys-color-primario-7);
+  --articulos-table-header-bg: var(--mls-sys-color-primario-4);
   --articulos-table-header-color: var(--mls-sys-color-gris-1);
   --articulos-table-row-hover-bg: var(--mls-sys-color-primario-2);
   --articulos-table-cell-padding: var(--mls-sys-padding-3);
@@ -32,31 +32,30 @@
   --articulos-action-view-bg: var(--mls-sys-color-secundario-7);
   --articulos-action-view-color: var(--mls-sys-color-gris-1);
   --articulos-action-view-hover-bg: var(--mls-sys-color-secundario-9);
-  --articulos-action-edit-bg: var(--mls-sys-color-primario-7);
+  --articulos-action-edit-bg: var(--mls-sys-color-primario-4);
   --articulos-action-edit-color: var(--mls-sys-color-gris-1);
   --articulos-action-edit-hover-bg: var(--mls-sys-color-primario-9);
   --articulos-action-delete-bg: var(--mls-sys-color-rojo-7);
   --articulos-action-delete-color: var(--mls-sys-color-gris-1);
   --articulos-action-delete-hover-bg: var(--mls-sys-color-rojo-9);
-  --articulos-header-padding: var(--mls-sys-padding-4);
-  --articulos-header-bg: var(--mls-sys-color-primario-2);
+  --articulos-header-padding: var(--mls-sys-padding-3);
+  --articulos-header-bg: var(--mls-sys-color-gris-2);
   --articulos-header-border-color: var(--mls-sys-color-primario-7);
-  --articulos-title-margin-bottom: var(--mls-sys-gap-3);
+  --articulos-title-margin-bottom: var(--mls-sys-gap-2);
   --articulos-controls-gap: var(--mls-sys-gap-2);
   --articulos-controls-padding: var(--mls-sys-padding-3);
-  --articulos-controls-bg: var(--mls-sys-color-primario-2);
+  --articulos-controls-bg: var(--mls-sys-color-blanco-2);
   --articulos-controls-border-radius: var(--mls-sys-border-radius-2);
   --articulos-select-border-radius: var(--mls-sys-border-radius-2);
   --articulos-select-font-size: var(--mls-sys-font-size-4);
   --articulos-select-focus-shadow-color: var(--mls-sys-color-primario-3);
-  --articulos-select-hover-border: var(--mls-sys-color-primario-7);
-  --articulos-btn-hover-shadow: var(--mls-sys-box-shadow-3);
+  --articulos-select-hover-border: var(--mls-sys-color-secundario-11);
+  --articulos-btn-hover-shadow: var(--mls-sys-box-shadow-4);
   --articulos-table-header-font-size: var(--mls-sys-font-size-5);
   --articulos-table-header-font-weight: var(--mls-sys-font-weight-4);
-  --articulos-table-row-border-color: var(--mls-sys-color-primario-3);
+  --articulos-table-row-border-color: var(--mls-sys-color-secundario-2);
   --articulos-table-cell-price-color: var(--mls-sys-color-secundario-10);
   --articulos-table-cell-price-font-weight: var(--mls-sys-font-weight-4);
-  --articulos-table-cell-quantity-color: var(--mls-sys-color-primario-8);
   --articulos-table-cell-quantity-font-weight: var(--mls-sys-font-weight-4);
   --articulos-actions-gap: var(--mls-sys-gap-2);
   --articulos-action-padding-y: var(--mls-sys-padding-1);
@@ -64,15 +63,17 @@
   --articulos-action-font-size: var(--mls-sys-font-size-3);
   --articulos-action-font-weight: var(--mls-sys-font-weight-4);
   --articulos-action-border-radius: var(--mls-sys-border-radius-2);
-  --articulos-min-height: calc(100vh - (var(--mls-sys-padding-3)) + var(--mls-sys-padding-4) + 8px);
+  --articulos-font-family: var(--mls-sys-font-header);
+  --articulos-delete-btn-color: var(--mls-sys-color-rojo-7);
+  --articulos-padding-bottom: var(--mls-sys-padding-9);
   --articulos-font-family-article: var(--mls-sys-font-Article, sans-serif);
   --articulos-font-family-header: var(--mls-sys-font-header, sans-serif);
 
   padding: var(--articulos-container-padding);
   background-color: var(--articulos-bg-color);
-
   min-height: var(--articulos-action-min-height);
-  padding-bottom: calc(var(--mls-sys-font-size-3) + (var(--mls-sys-padding-4) * 2) + 8px);
+  padding-bottom: var(--articulos-padding-bottom);
+  font-family: var(--articulos-font-family);
   font-family: var(--articulos-font-family-article);
   &__header {
     margin-bottom: var(--articulos-gap);
@@ -129,16 +130,15 @@
     border-radius: var(--articulos-btn-border-radius);
     text-decoration: none;
     cursor: pointer;
-    border: none;
     transition: all 0.3s ease;
+    
 
     &--nuevo {
-      padding: var(--articulos-select-padding);
       background-color: var(--articulos-btn-nuevo-bg);
+      padding: var(--articulos-select-padding);
       color: var(--articulos-btn-nuevo-color);
 
       &:hover {
-        background-color: var(--articulos-btn-nuevo-hover-bg);
         transform: translateY(-2px);
         box-shadow: var(--articulos-btn-hover-shadow);
       }
@@ -197,7 +197,7 @@
     }
 
     &--actions {
-      text-align: center;
+      text-align: right;
     }
   }
 
@@ -207,6 +207,7 @@
     font-weight: var(--articulos-label-font-weight);
     transition: all 0.3s ease;
     cursor: pointer;
+    text-decoration: underline;
 
     &:hover {
       color: var(--articulos-action-edit-bg);
@@ -220,20 +221,10 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    color: var(--articulos-delete-btn-color);
 
     &:hover {
       transform: scale(1.1);
-    }
-  }
-
-  &__delete-icon {
-    width: 24px;
-    height: 24px;
-    opacity: 0.7;
-    transition: all 0.3s ease;
-
-    &:hover {
-      opacity: 1;
     }
   }
 }

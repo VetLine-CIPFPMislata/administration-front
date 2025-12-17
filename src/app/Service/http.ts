@@ -24,7 +24,7 @@ export class Http {
 
 
   getAll(): Observable <Articulo[]> {
-    return this.Mihttp.get<Articulo[]>(this.urlProducts + "?size=100")
+    return this.Mihttp.get<Articulo[]>(this.urlProducts + "?size=100", { headers: this.getAuthHeaders() })
   }
 
   getById(id: String): Observable <Articulo> {
@@ -44,11 +44,11 @@ export class Http {
   }
 
   getAllCategories(): Observable<Category[]> {
-    return this.Mihttp.get<Category[]>(this.urlCategories)
+    return this.Mihttp.get<Category[]>(this.urlCategories, { headers: this.getAuthHeaders() })
   }
 
   getProductsByCategory(category: string): Observable<Articulo[]> {
-    return this.Mihttp.get<Articulo[]>(this.urlProducts + "/search/category/" + category)
+    return this.Mihttp.get<Articulo[]>(this.urlProducts + "/search/category/" + category, { headers: this.getAuthHeaders() })
   }
 
   getCategoryById(id: string): Observable<Category> {

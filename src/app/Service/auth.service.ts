@@ -12,7 +12,6 @@ export interface LoginResponse {
   token: string;
   email: string;
   name: string;
-  role: string;
 }
 
 export interface User {
@@ -20,7 +19,6 @@ export interface User {
   name: string;
   email: string;
   phone?: string;
-  role: string;
   cartId?: number;
 }
 
@@ -45,7 +43,6 @@ export class AuthService {
     return this.http.post(`${this.urlAuth}/logout`, {}, { headers });
   }
 
-  //lo usaremos mas adelante
   getCurrentUser(): Observable<User> {
     const token = this.getToken();
     const headers = new HttpHeaders({
@@ -62,15 +59,6 @@ export class AuthService {
   getToken(): string | null {
     return localStorage.getItem('authToken');
   }
-
-  saveUserRole(role: string): void {
-    localStorage.setItem('userRole', role);
-  }
-
-  getUserRole(): string | null {
-    return localStorage.getItem('userRole');
-  }
-
   saveUserEmail(email: string): void {
     localStorage.setItem('userEmail', email);
   }
@@ -89,7 +77,6 @@ export class AuthService {
 
   clearAuth(): void {
     localStorage.removeItem('authToken');
-    localStorage.removeItem('userRole');
     localStorage.removeItem('userEmail');
     localStorage.removeItem('userName');
   }
@@ -98,7 +85,4 @@ export class AuthService {
     return this.getToken() !== null;
 }                 
 
-  isAdmin(): boolean {
-    return this.getUserRole() === 'ADMIN';
-  }
 }

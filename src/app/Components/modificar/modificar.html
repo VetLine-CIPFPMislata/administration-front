@@ -28,12 +28,16 @@
 
         <div class="modificar-articulo__field">
           <label class="modificar-articulo__label" for="category">Categoría:</label>
-          <input 
-            type="text" 
-            [(ngModel)]="articulo.category.name" 
+          <select 
+            [(ngModel)]="selectedCategoryId" 
             name="category"
             class="modificar-articulo__input"
             required>
+            <option value="" disabled>Selecciona una categoría</option>
+            @for (categoria of categorias; track categoria.id) {
+              <option [value]="categoria.id">{{ categoria.name }}</option>
+            }
+          </select>
         </div>
 
         <div class="modificar-articulo__field">
@@ -57,16 +61,6 @@
             step="0.01"
             min="0"
             max="100">
-        </div>
-
-        <div class="modificar-articulo__field">
-          <label class="modificar-articulo__label" for="price">Precio Final:</label>
-          <input 
-            type="number" 
-            [(ngModel)]="articulo.price" 
-            name="price"
-            class="modificar-articulo__input"
-            required>
         </div>
 
         <div class="modificar-articulo__field">

@@ -10,8 +10,6 @@ import { NuevoCategory } from './Components/nuevo-category/nuevo-category';
 import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-    {path: "", redirectTo: "/login", pathMatch: "full"},
-    {path: "login", component: Login},
     {path: "articulos", component: Articulos, canActivate: [authGuard]},
     {path: "category", component: Categorias, canActivate: [authGuard]},
     {path: "ver-articulo/:id", component: VerArticulo, canActivate: [authGuard]},
@@ -19,5 +17,6 @@ export const routes: Routes = [
     {path: "modificar/:id", component: Modificar, canActivate: [authGuard]},
     {path: "nuevo", component: Nuevo, canActivate: [authGuard]},
     {path: "nuevo/category", component: NuevoCategory, canActivate: [authGuard]},
+    {path: "login", component: Login}, 
     {path: "**", redirectTo: "/login"}
 ];

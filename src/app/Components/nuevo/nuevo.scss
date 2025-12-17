@@ -2,7 +2,8 @@
   --nuevo-articulo-bg-color: var(--mls-sys-color-primario-1);
   --nuevo-articulo-container-bg: var(--mls-sys-color-gris-1);
   --nuevo-articulo-padding: var(--mls-sys-padding-5);
-  --nuevo-articulo-gap: var(--mls-sys-gap-4);
+  --nuevo-articulo-gap: var(--mls-sys-gap-3);
+  --nuevo-articulo-shadow-field: var(--mls-sys-box-shadow-2);
   --nuevo-articulo-border-radius: var(--mls-sys-border-radius-4);
   --nuevo-articulo-shadow: var(--mls-sys-box-shadow-4);
   --nuevo-articulo-title-color: var(--mls-sys-color-primario-10);
@@ -12,7 +13,7 @@
   --nuevo-articulo-label-font-size: var(--mls-sys-font-size-5);
   --nuevo-articulo-label-font-weight: var(--mls-sys-font-weight-4);
   --nuevo-articulo-input-bg: var(--mls-sys-color-gris-1);
-  --nuevo-articulo-input-border-color: var(--mls-sys-color-primario-5);
+  --nuevo-articulo-input-border-color: var(--mls-sys-color-gris-5);
   --nuevo-articulo-input-border-radius: var(--mls-sys-border-radius-2);
   --nuevo-articulo-input-font-size: var(--mls-sys-font-size-4);
   --nuevo-articulo-input-focus-border: var(--mls-sys-color-primario-9);
@@ -47,6 +48,7 @@
   --nuevo-articulo-btn-hover-shadow: var(--mls-sys-box-shadow-3);
   --nuevo-articulo-container-width: var(--mls-sys-width-16);
   --nuevo-articulo-textarea-min-height: var(--mls-sys-height-5);
+  --nuevo-articulo-label-margin: var(--mls-sys-margin-2);
   --nuevo-articulo-font-family-Article: var(--mls-sys-font-Article, sans-serif);
   --nuevo-articulo-font-family-header: var(--mls-sys-font-header, sans-serif);
 
@@ -67,6 +69,8 @@
   }
 
   &__header {
+    align-items: center;
+    text-align: center;
     margin-bottom: var(--nuevo-articulo-gap);
     padding-bottom: var(--nuevo-articulo-header-padding-bottom);
     background: var(--nuevo-articulo-header-bg);
@@ -88,24 +92,22 @@
   }
 
   &__field {
+    box-shadow: var(--nuevo-articulo-shadow-field);
     display: flex;
     flex-direction: column;
     gap: var(--nuevo-articulo-field-gap);
     padding: var(--nuevo-articulo-field-padding);
-    background-color: var(--nuevo-articulo-field-bg);
     border-radius: var(--nuevo-articulo-field-border-radius);
     transition: all 0.3s ease;
     font-family: var(--nuevo-articulo-font-family-Article);
 
-    &:hover {
-      background-color: var(--nuevo-articulo-field-hover-bg);
-    }
   }
 
   &__label {
     font-size: var(--nuevo-articulo-label-font-size);
     font-weight: var(--nuevo-articulo-label-font-weight);
     color: var(--nuevo-articulo-label-color);
+    margin: var(--nuevo-articulo-label-margin);
   }
 
   &__input,
@@ -113,18 +115,10 @@
   &__select {
     padding: var(--nuevo-articulo-btn-padding-y) var(--nuevo-articulo-field-padding);
     border-radius: var(--nuevo-articulo-input-border-radius);
-    background-color: var(--nuevo-articulo-input-bg);
     font-size: var(--nuevo-articulo-input-font-size);
     transition: all 0.3s ease;
+    border: 1px solid var(--nuevo-articulo-input-border-color);
 
-    &:focus {
-      outline: none;
-      border-color: var(--nuevo-articulo-input-focus-border);
-    }
-
-    &:hover {
-      border-color: var(--nuevo-articulo-input-hover-border);
-    }
   }
 
   &__textarea {
@@ -137,7 +131,6 @@
     gap: var(--nuevo-articulo-actions-gap);
     justify-content: flex-end;
     padding-top: var(--nuevo-articulo-actions-padding-top);
-    border-top: 1px solid var(--nuevo-articulo-actions-border-color);
     margin-top: var(--nuevo-articulo-actions-margin-top);
   }
 
@@ -153,11 +146,11 @@
     transition: all 0.3s ease;
 
     &--cancel {
-      background-color: var(--nuevo-articulo-btn-cancel-bg);
-      color: var(--nuevo-articulo-btn-cancel-color);
+      background-color: var(--mls-sys-color-gris-1);
+      color: var(--mls-sys-color-primario-9);
+      border: 2px solid var(--mls-sys-color-primario-7);
 
       &:hover {
-        background-color: var(--nuevo-articulo-btn-cancel-hover-bg);
         transform: translateY(-2px);
         box-shadow: var(--nuevo-articulo-btn-hover-shadow);
       }
@@ -168,7 +161,6 @@
       color: var(--nuevo-articulo-btn-submit-color);
 
       &:hover {
-        background-color: var(--nuevo-articulo-btn-submit-hover-bg);
         transform: translateY(-2px);
         box-shadow: var(--nuevo-articulo-btn-hover-shadow);
       }

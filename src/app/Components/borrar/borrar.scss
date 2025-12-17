@@ -2,7 +2,8 @@
   --borrar-articulo-bg-color: var(--mls-sys-color-primario-1);
   --borrar-articulo-container-bg: var(--mls-sys-color-gris-1);
   --borrar-articulo-padding: var(--mls-sys-padding-5);
-  --borrar-articulo-gap: var(--mls-sys-gap-4);
+  --borrar-articulo-gap: var(--mls-sys-gap-3);
+  --borrar-articulo-shadow-field: var(--mls-sys-box-shadow-2);
   --borrar-articulo-border-radius: var(--mls-sys-border-radius-4);
   --borrar-articulo-shadow: var(--mls-sys-box-shadow-4);
   --borrar-articulo-title-color: var(--mls-sys-color-rojo-10);
@@ -10,7 +11,7 @@
   --borrar-articulo-warning-color: var(--mls-sys-color-rojo-9);
   --borrar-articulo-warning-font-size: var(--mls-sys-font-size-4);
   --borrar-articulo-warning-font-weight: var(--mls-sys-font-weight-4);
-  --borrar-articulo-label-color: var(--mls-sys-color-primario-9);
+  --borrar-articulo-label-color: var(--mls-sys-color-gris-13);
   --borrar-articulo-label-font-weight: var(--mls-sys-font-weight-4);
   --borrar-articulo-btn-font-weight: var(--mls-sys-font-weight-4);
   --borrar-articulo-label-font-size: var(--mls-sys-font-size-5);
@@ -20,9 +21,6 @@
   --borrar-articulo-btn-padding-x: var(--mls-sys-padding-4);
   --borrar-articulo-btn-font-size: var(--mls-sys-font-size-4);
   --borrar-articulo-btn-border-radius: var(--mls-sys-border-radius-3);
-  --borrar-articulo-btn-cancel-bg: var(--mls-sys-color-secundario-7);
-  --borrar-articulo-btn-cancel-color: var(--mls-sys-color-gris-1);
-  --borrar-articulo-btn-cancel-hover-bg: var(--mls-sys-color-secundario-9);
   --borrar-articulo-btn-delete-bg: var(--mls-sys-color-rojo-7);
   --borrar-articulo-btn-delete-color: var(--mls-sys-color-gris-1);
   --borrar-articulo-btn-delete-hover-bg: var(--mls-sys-color-rojo-9);
@@ -35,13 +33,9 @@
   --borrar-articulo-info-gap: var(--mls-sys-gap-3);
   --borrar-articulo-detail-gap: var(--mls-sys-gap-1);
   --borrar-articulo-detail-padding: var(--mls-sys-padding-3);
-  --borrar-articulo-detail-bg: var(--mls-sys-color-primario-2);
   --borrar-articulo-detail-border-radius: var(--mls-sys-border-radius-2);
-  --borrar-articulo-detail-hover-bg: var(--mls-sys-color-primario-3);
-  --borrar-articulo-detail-hover-border-color: var(--mls-sys-color-primario-9);
   --borrar-articulo-actions-gap: var(--mls-sys-gap-2);
   --borrar-articulo-actions-padding-top: var(--mls-sys-padding-3);
-  --borrar-articulo-actions-border-color: var(--mls-sys-color-primario-5);
   --borrar-articulo-btn-hover-shadow: var(--mls-sys-box-shadow-3);
 
   padding: var(--borrar-articulo-padding);
@@ -91,19 +85,13 @@
   }
 
   &__detail {
+    box-shadow: var(--borrar-articulo-shadow-field);
     display: flex;
     flex-direction: column;
     gap: var(--borrar-articulo-detail-gap);
     padding: var(--borrar-articulo-detail-padding);
-    background-color: var(--borrar-articulo-detail-bg);
     border-radius: var(--borrar-articulo-detail-border-radius);
     transition: all 0.3s ease;
-
-    &:hover {
-      background-color: var(--borrar-articulo-detail-hover-bg);
-      border-left-color: var(--borrar-articulo-detail-hover-border-color);
-      transform: translateX(5px);
-    }
   }
 
   &__label {
@@ -135,11 +123,11 @@
     border: none;
 
     &--cancel {
-      background-color: var(--borrar-articulo-btn-cancel-bg);
-      color: var(--borrar-articulo-btn-cancel-color);
+      background-color: var(--mls-sys-color-gris-1);
+      color: var(--mls-sys-color-primario-9);
+      border: 2px solid var(--mls-sys-color-primario-7);
 
       &:hover {
-        background-color: var(--borrar-articulo-btn-cancel-hover-bg);
         transform: translateY(-2px);
         box-shadow: var(--borrar-articulo-btn-hover-shadow);
       }
@@ -150,7 +138,6 @@
       color: var(--borrar-articulo-btn-delete-color);
 
       &:hover {
-        background-color: var(--borrar-articulo-btn-delete-hover-bg);
         transform: translateY(-2px);
         box-shadow: var(--borrar-articulo-btn-hover-shadow);
       }

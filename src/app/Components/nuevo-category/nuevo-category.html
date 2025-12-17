@@ -1,20 +1,24 @@
-<section class="nuevo-category">
-	<h2 class="nuevo-category__header">Crear categoría</h2>
+<div class="nuevo-category">
+  <div class="nuevo-category__container">
+    <div class="nuevo-category__header">
+      <h1 class="nuevo-category__title">Crear nueva categoría</h1>
+    </div>
 
-	<form class="nuevo-category__form">
-		<div class="nuevo-category__field">
-			<label class="nuevo-category__label" for="name">Nombre</label>
-			<input class="nuevo-category__input" id="name" name="name" [(ngModel)]="name" required />
-		</div>
+    <form class="nuevo-category__form">
+      <div class="nuevo-category__field">
+        <label class="nuevo-category__label" for="name">Nombre:</label>
+        <input class="nuevo-category__input" id="name" name="name" [(ngModel)]="name" required />
+      </div>
 
-		<div class="nuevo-category__field">
-			<label class="nuevo-category__label" for="description">Descripción</label>
-			<input class="nuevo-category__input" id="description" name="description" [(ngModel)]="description" required />
-		</div>
+      <div class="nuevo-category__field">
+        <label class="nuevo-category__label" for="description">Descripción:</label>
+        <input class="nuevo-category__input" id="description" name="description" [(ngModel)]="description" required />
+      </div>
 
-		<div class="nuevo-category__actions">
-			<button class="nuevo-category__btn nuevo-category__btn--cancel" type="button" (click)="cancelar()">Cancelar</button>
-			<button class="nuevo-category__btn nuevo-category__btn--save" type="button" [disabled]="desactivado" (click)="crearCategoria()">Guardar</button>
-		</div>
-	</form>
-</section>
+      <div class="nuevo-category__actions">
+        <button class="nuevo-category__btn nuevo-category__btn--cancel" type="button" (click)="cancelar()">Volver</button>
+        <button class="nuevo-category__btn nuevo-category__btn--submit" type="button" (click)="crearCategoria()">Crear categoría</button>
+      </div>
+    </form>
+  </div>
+</div>

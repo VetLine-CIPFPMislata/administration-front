@@ -36,20 +36,30 @@ export class Login {
     this.authService.login(this.credentials).subscribe({
       next: (response) => {
         console.log('Login exitoso:', response);
-        this.isLoading = false;
-
-        if (response.role !== 'ADMIN') {
-          this.errorMessage = 'Acceso denegado. Solo administradores pueden acceder a esta aplicación.';
-          return;
-        }
-
 
         this.authService.saveToken(response.token);
-        this.authService.saveUserRole(response.role);
         this.authService.saveUserEmail(response.email);
         this.authService.saveUserName(response.name);
 
-        this.router.navigate(['/articulos']);
+
+        this.authService.getCurrentUser().subscribe({
+          next: (user) => {
+            console.log('Usuario verificado como admin:', user);
+            this.isLoading = false;
+            this.router.navigate(['/articulos']);
+          },
+          error: (error) => {
+            console.error('Usuario sin permisos de admin:', error);
+            this.isLoading = false;
+            this.authService.clearAuth();
+            
+            if (error.status === 403) {
+              this.errorMessage = 'No tienes permisos de administrador para acceder a esta aplicación.';
+            } else {
+              this.errorMessage = 'Error al verificar permisos. Por favor, intenta de nuevo.';
+            }
+          }
+        });
       },
       error: (error) => {
         console.error('Error en login:', error);
@@ -57,8 +67,6 @@ export class Login {
         
         if (error.status === 401) {
           this.errorMessage = 'Credenciales incorrectas. Por favor, verifica tu email y contraseña.';
-        } else if (error.status === 403) {
-          this.errorMessage = 'No tienes permisos para acceder a esta aplicación.';
         } else {
           this.errorMessage = 'Error al iniciar sesión. Por favor, intenta de nuevo más tarde.';
         }

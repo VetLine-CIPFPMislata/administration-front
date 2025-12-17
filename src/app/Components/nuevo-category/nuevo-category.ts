@@ -14,12 +14,10 @@ export class NuevoCategory {
   miHttp = inject(Http);
   router = inject(Router);
   categoria!: Category;
-  desactivado = false;
   name!: string;
   description!: string;
 
   crearCategoria() {
-    this.desactivado = true;
     this.categoria = {
       id: undefined!, // El ID se generará en el backend
       name: this.name,
@@ -28,12 +26,10 @@ export class NuevoCategory {
 
     this.miHttp.createCategory(this.categoria).subscribe({
       next: () => {
-        this.desactivado = false;
         this.router.navigate(['/category']);
       },
       error: (err) => {
         console.error('Error creando categoría:', err);
-        this.desactivado = false;
       },
     });
   }

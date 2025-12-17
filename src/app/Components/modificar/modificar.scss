@@ -13,7 +13,7 @@
   --modificar-articulo-input-bg: var(--mls-sys-color-primario-2);
   --modificar-articulo-btn-font-weight: var(--mls-sys-font-weight-4);
   --modificar-articulo-input-color: var(--mls-sys-color-gris-13);
-  --modificar-articulo-input-border: var(--mls-sys-color-primario-5);
+  --modificar-articulo-input-border: var(--mls-sys-color-gris-3);
   --modificar-articulo-input-focus-border: var(--mls-sys-color-primario-9);
   --modificar-articulo-input-padding: var(--mls-sys-padding-2);
   --modificar-articulo-input-font-size: var(--mls-sys-font-size-4);
@@ -27,7 +27,7 @@
   --modificar-articulo-btn-submit-bg: var(--mls-sys-color-primario-7);
   --modificar-articulo-btn-submit-color: var(--mls-sys-color-gris-1);
   --modificar-articulo-btn-submit-hover-bg: var(--mls-sys-color-primario-9);
-  --modificar-articulo-container-width: var(--mls-sys-width-18);
+  --modificar-articulo-container-width: var(--mls-sys-width-16);
   --modificar-articulo-header-border-color: var(--mls-sys-color-primario-7);
   --modificar-articulo-header-padding-bottom: var(--mls-sys-padding-3);
   --modificar-articulo-header-bg: var(--mls-sys-color-secundario-2);
@@ -50,13 +50,18 @@
   --modificar-articulo-btn-hover-shadow: var(--mls-sys-box-shadow-3);
   --modificar-articulo-textarea-min-height: var(--mls-sys-height-5);
   --modificar-articulo-label-margin: var(--mls-sys-margin-2);
+  --modificar-articulo-shadow-field: var(--mls-sys-box-shadow-2);
 
   padding: var(--modificar-articulo-padding);
   background-color: var(--modificar-articulo-bg-color);
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__container {
     max-width: var(--modificar-articulo-container-width);
+    width: 100%;
     background-color: var(--modificar-articulo-container-bg);
     border-radius: var(--modificar-articulo-border-radius);
     box-shadow: var(--modificar-articulo-shadow);
@@ -64,6 +69,8 @@
   }
 
   &__header {
+    align-items: center;
+    text-align: center;
     margin-bottom: var(--modificar-articulo-gap);
     padding-bottom: var(--modificar-articulo-header-padding-bottom);
     background: var(--modificar-articulo-header-bg);
@@ -83,24 +90,13 @@
   }
 
   &__field {
+    box-shadow: var(--modificar-articulo-shadow-field);   
     display: flex;
     flex-direction: column;
     gap: var(--modificar-articulo-field-gap);
     padding: var(--modificar-articulo-field-padding);
-    background-color: var(--modificar-articulo-field-bg);
     border-radius: var(--modificar-articulo-field-border-radius);
     transition: all 0.3s ease;
-
-    &:hover {
-      background-color: var(--modificar-articulo-field-hover-bg);
-      border-left-color: var(--modificar-articulo-field-hover-border-color);
-    }
-
-    &:focus-within {
-      background-color: var(--modificar-articulo-field-hover-bg);
-      border-left-color: var(--modificar-articulo-field-hover-border-color);
-      transform: translateX(5px);
-    }
   }
 
   &__label {
@@ -114,7 +110,7 @@
   &__textarea {
     padding: var(--modificar-articulo-input-padding);
     font-size: var(--modificar-articulo-input-font-size);
-    border: var(--modificar-articulo-input-border);
+    border: 1px solid var(--modificar-articulo-input-border);
     border-radius: var(--modificar-articulo-input-border-radius);
     background-color: var(--modificar-articulo-input-bg-color);
     color: var(--modificar-articulo-input-color);
@@ -155,11 +151,11 @@
     border: none;
 
     &--cancel {
-      background-color: var(--modificar-articulo-btn-cancel-bg);
-      color: var(--modificar-articulo-btn-cancel-color);
+      background-color: var(--mls-sys-color-gris-1);
+      color: var(--mls-sys-color-primario-9);
+      border: 2px solid var(--mls-sys-color-primario-7);
 
       &:hover {
-        background-color: var(--modificar-articulo-btn-cancel-hover-bg);
         transform: translateY(-2px);
         box-shadow: var(--modificar-articulo-btn-hover-shadow);
       }
@@ -170,7 +166,6 @@
       color: var(--modificar-articulo-btn-submit-color);
 
       &:hover {
-        background-color: var(--modificar-articulo-btn-submit-hover-bg);
         transform: translateY(-2px);
         box-shadow: var(--modificar-articulo-btn-hover-shadow);
       }

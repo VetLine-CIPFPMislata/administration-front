@@ -23,7 +23,7 @@
         <th class="articulos__table-header articulos__table-header--left">Categoría</th>
         <th class="articulos__table-header">Precio</th>
         <th class="articulos__table-header">Cantidad</th>
-        <th class="articulos__table-header">Acciones</th>
+        <th class="articulos__table-header"></th>
       </tr>
     </thead>
     <tbody class="articulos__table-body">
@@ -37,7 +37,7 @@
           <td class="articulos__table-cell articulos__table-cell--quantity">{{articulo.quantity}}</td>
           <td class="articulos__table-cell articulos__table-cell--actions">
             <a routerLink="/borrar/{{articulo.id}}" class="articulos__delete-btn">
-              <img src="icons8-papelera-100.png" alt="Eliminar" class="articulos__delete-icon">
+              <mat-icon>delete</mat-icon>
             </a>
           </td>
         </tr>

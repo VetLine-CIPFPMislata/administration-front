@@ -1,61 +1,76 @@
 <div class="categories">
-    <div class="categories__toolbar">
-        <button class="categories__btn categories__btn--default" routerLink="/nuevo/category">Dar de alta   <span><mat-icon>add</mat-icon></span></button>
-
-        <div class="categories__search-wrap">
-            <input
-                class="categories__search"
-                type="search"
-                placeholder="Buscar por nombre o ID"
-                aria-label="Buscar categorías"
-                (input)="onSearch($event.target.value)"
-            />
-            <mat-icon class="categories__search-icon">search</mat-icon>
-        </div>
+  <div class="categories__header">
+    <h1 class="categories__title">Gestión de Categorías</h1>
+    <div class="categories__controls">
+      <input
+        class="categories__search"
+        type="search"
+        placeholder="Buscar por nombre o ID"
+        aria-label="Buscar categorías"
+        (input)="onSearch($event.target.value)"
+      />
+      <a routerLink="/nuevo/category" class="categories__btn categories__btn--nuevo">
+        Nueva categoría
+      </a>
     </div>
+  </div>
 
-    <table class="categories__table">
-    <thead>
-        <tr class="categories__table categories__table--table-row">
-            <th>Id</th>
-            <th>Nombre</th>
-            <th></th>
-        </tr>
+  <table class="categories__table">
+    <thead class="categories__table-head">
+      <tr class="categories__table-row">
+        <th class="categories__table-header categories__table-header--left">Id</th>
+        <th class="categories__table-header categories__table-header--left">Nombre</th>
+        <th class="categories__table-header"></th>
+      </tr>
     </thead>
-    <tbody>
-        @for (categoria of filteredCategorias; track categoria.id) {
-        <tr>
-            <td>{{ categoria.id }}</td>
-            <td>{{ categoria.name }}</td>
-            <td>
-                <div class="categories__actions">
-                    <mat-icon class="categories__btn categories__btn--danger" (click)="openDeleteModal(categoria)">delete</mat-icon>
-                </div>
-            </td>
+    <tbody class="categories__table-body">
+      @for (categoria of filteredCategorias; track categoria.id) {
+        <tr class="categories__table-row">
+          <td class="categories__table-cell categories__table-cell--left">{{ categoria.id }}</td>
+          <td class="categories__table-cell categories__table-cell--left">{{ categoria.name }}</td>
+          <td class="categories__table-cell categories__table-cell--actions">
+            <mat-icon
+              class="categories__delete-btn"
+              (click)="openDeleteModal(categoria)">
+              delete
+            </mat-icon>
+          </td>
         </tr>
-        }
+      }
 
-        @if (filteredCategorias.length == 0) {
-                <tr class="categories__row categories__row--empty">
-                        <td colspan="3">No hay categorías.</td>
-                </tr>
-        }
+      @if (filteredCategorias.length == 0) {
+        <tr class="categories__table-row">
+          <td class="categories__table-cell" colspan="3">
+            No hay categorías.
+          </td>
+        </tr>
+      }
     </tbody>
-</table>
+  </table>
 
-@if (modal) {
+  @if (modal) {
     <div class="categories__overlay" role="dialog" aria-modal="true">
-        <div class="categories__modal">
-            <h3 class="categories__modal-title">Confirmar borrado</h3>
-            @if (borrarCategoria) {
-                <p class="categories__modal-text">¿Deseas borrar la categoría "{{ borrarCategoria.name }}"?</p>
+      <div class="categories__modal">
+        <h3 class="categories__modal-title">Confirmar borrado</h3>
 
-                <div class="categories__modal-actions">
-                    <button class="categories__btn" (click)="close()">Cancelar</button>
-                    <button class="categories__btn categories__btn--borrar" (click)="borrar(borrarCategoria.id)">Borrar</button>
-                </div>
-            }
-        </div>
+        @if (borrarCategoria) {
+
+          <div class="categories__modal-actions">
+            <button
+              class="categories__modal-btn categories__modal-btn--cancel"
+              (click)="close()">
+              Cancelar
+            </button>
+
+            <button
+              class="categories__modal-btn categories__modal-btn--delete"
+              (click)="borrar(borrarCategoria.id)">
+              Borrar
+            </button>
+          </div>
+        }
+      </div>
     </div>
-}
+  }
 
+</div>

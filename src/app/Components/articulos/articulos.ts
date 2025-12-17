@@ -5,10 +5,11 @@ import { Category } from '../../Modelos/Category';
 import { RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-articulos',
-  imports: [RouterLink, FormsModule],
+  imports: [RouterLink, FormsModule, MatIcon],
   templateUrl: './articulos.html',
   styleUrl: './articulos.scss',
 })
