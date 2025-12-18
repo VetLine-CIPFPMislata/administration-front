@@ -24,6 +24,9 @@
   --nuevo-category-btn-border-radius: var(--mls-sys-border-radius-3);
   --nuevo-category-btn-submit-bg: var(--mls-sys-color-primario-7);
   --nuevo-category-btn-submit-color: var(--mls-sys-color-gris-1);
+  --nuevo-category-btn-cancel-bg: var(--mls-sys-color-gris-1);
+  --nuevo-category-btn-cancel-color: var(--mls-sys-color-primario-9);
+  --nuevo-category-btn-cancel-border: 2px solid var(--mls-sys-color-primario-7);
   --nuevo-category-header-bg: var(--mls-sys-color-secundario-2);
   --nuevo-category-header-padding: var(--mls-sys-padding-3);
   --nuevo-category-header-border-radius: var(--mls-sys-border-radius-3);
@@ -168,9 +171,9 @@
     transition: all 0.3s ease;
 
     &--cancel {
-      background-color: var(--mls-sys-color-gris-1);
-      color: var(--mls-sys-color-primario-9);
-      border: 2px solid var(--mls-sys-color-primario-7);
+      background-color: var(--nuevo-category-btn-cancel-bg);
+      color: var(--nuevo-category-btn-cancel-color);
+      border: var(--nuevo-category-btn-cancel-border);
 
       &:hover {
         transform: translateY(-2px);

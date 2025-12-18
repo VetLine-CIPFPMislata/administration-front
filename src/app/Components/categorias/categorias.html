@@ -27,7 +27,7 @@
       @for (categoria of filteredCategorias; track categoria.id) {
         <tr class="categories__table-row">
           <td class="categories__table-cell categories__table-cell--left">{{ categoria.id }}</td>
-          <td class="categories__table-cell categories__table-cell--left">{{ categoria.name }}</td>
+          <td class="categories__table-cell categories__table-cell--name" routerLink="{{categoria.id}}">{{ categoria.name }}</td>
           <td class="categories__table-cell categories__table-cell--actions">
             <mat-icon
               class="categories__delete-btn"

@@ -66,4 +66,8 @@ export class Http {
     return this.Mihttp.post<Category>(this.urlCategories, category, { headers: this.getAuthHeaders() });
   }
 
+  updateCategory(id: string, category: Category): Observable<Category> {
+    return this.Mihttp.put<Category>(this.urlCategories + "/" + id, category, { headers: this.getAuthHeaders() });
+  }
+
 }

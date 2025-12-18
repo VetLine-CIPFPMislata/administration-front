@@ -1,0 +1,189 @@
+.editar-category {
+  --editar-category-bg-color: var(--mls-sys-color-primario-1);
+  --editar-category-container-bg: var(--mls-sys-color-gris-1);
+  --editar-category-padding: var(--mls-sys-padding-2);
+  --editar-category-gap: var(--mls-sys-gap-3);
+  --editar-category-border-radius: var(--mls-sys-border-radius-4);
+  --editar-category-shadow: var(--mls-sys-box-shadow-4);
+  --editar-category-title-color: var(--mls-sys-color-primario-10);
+  --editar-category-title-font-size: var(--mls-sys-font-size-8);
+  --editar-category-title-font-weight: var(--mls-sys-font-weight-4);
+  --editar-category-label-color: var(--mls-sys-color-primario-9);
+  --editar-category-label-font-size: var(--mls-sys-font-size-5);
+  --editar-category-label-font-weight: var(--mls-sys-font-weight-4);
+  --editar-category-input-bg: var(--mls-sys-color-gris-1);
+  --editar-category-input-border-color: var(--mls-sys-color-gris-4);
+  --editar-category-input-border-radius: var(--mls-sys-border-radius-2);
+  --editar-category-input-font-size: var(--mls-sys-font-size-4);
+  --editar-category-input-focus-border: var(--mls-sys-color-primario-9);
+  --editar-category-input-hover-border: var(--mls-sys-color-primario-7);
+  --editar-category-btn-padding-y: var(--mls-sys-padding-2);
+  --editar-category-btn-padding-x: var(--mls-sys-padding-4);
+  --editar-category-btn-font-size: var(--mls-sys-font-size-4);
+  --editar-category-btn-font-weight: var(--mls-sys-font-weight-4);
+  --editar-category-btn-border-radius: var(--mls-sys-border-radius-3);
+  --editar-category-btn-submit-bg: var(--mls-sys-color-primario-7);
+  --editar-category-btn-submit-color: var(--mls-sys-color-gris-1);
+  --editar-category-header-bg: var(--mls-sys-color-secundario-2);
+  --editar-category-header-padding: var(--mls-sys-padding-3);
+  --editar-category-header-border-radius: var(--mls-sys-border-radius-3);
+  --editar-category-header-padding-bottom: var(--mls-sys-padding-3);
+  --editar-category-field-gap: var(--mls-sys-gap-1);
+  --editar-category-field-padding: var(--mls-sys-padding-3);
+  --editar-category-field-border-radius: var(--mls-sys-border-radius-2);
+  --editar-category-actions-gap: var(--mls-sys-gap-2);
+  --editar-category-actions-padding-top: var(--mls-sys-padding-3);
+  --editar-category-actions-margin-top: var(--mls-sys-gap-3);
+  --editar-category-btn-hover-shadow: var(--mls-sys-box-shadow-3);
+  --editar-category-container-width: var(--mls-sys-width-15);
+  --editar-category-shadow-field: var(--mls-sys-box-shadow-2);
+  --editar-category-label-margin: var(--mls-sys-margin-2);
+  --editar-category-pad-sm: var(--mls-sys-padding-2);
+  --editar-category-pad-md: var(--mls-sys-padding-3);
+  --editar-category-pad-lg: var(--mls-sys-padding-5);
+  
+  --editar-category-gap-sm: var(--mls-sys-gap-2);
+  --editar-category-gap-md: var(--mls-sys-gap-4);
+
+  --editar-category-radius-md: var(--mls-sys-border-radius-4);
+
+  --editar-category-primario-2: var(--mls-sys-color-primario-2);
+  --editar-category-primario-5: var(--mls-sys-color-primario-5);
+  --editar-category-primario-6: var(--mls-sys-color-primario-6);
+  --editar-category-primario-7: var(--mls-sys-color-primario-7);
+
+  --editar-category-gris-1: var(--mls-sys-color-gris-1);
+  --editar-category-gris-2: var(--mls-sys-color-gris-2);
+  --editar-category-gris-4: var(--mls-sys-color-gris-4);
+  --editar-category-gris-11: var(--mls-sys-color-gris-11);
+  --editar-category-gris-13: var(--mls-sys-color-gris-13);
+  --editar-category-gris-14: var(--mls-sys-color-gris-14);
+
+  --editar-category-secundario-2: var(--mls-sys-color-secundario-2);
+  --editar-category-secundario-5: var(--mls-sys-color-secundario-5);
+  --editar-category-secundario-6: var(--mls-sys-color-secundario-6);
+  --editar-category-font-size-sm: var(--mls-sys-font-size-4);
+  --editar-category-font-size-md: var(--mls-sys-font-size-5);
+  --editar-category-font-size-lg: var(--mls-sys-font-size-6);
+
+  --editar-category-box-shadow-2: var(--mls-sys-box-shadow-2);
+  --editar-category-box-shadow-3: var(--mls-sys-box-shadow-3);
+
+  --editar-category-font-header: var(--mls-sys-font-header, sans-serif);
+  --editar-category-font-article: var(--mls-sys-font-Article, sans-serif);
+
+  background-color: var(--editar-category-bg-color);
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--editar-category-pad-sm);
+  font-family: var(--editar-category-font-article);
+
+  &__container {
+    max-width: var(--editar-category-container-width);
+    width: 100%;
+    background-color: var(--editar-category-container-bg);
+    border-radius: var(--editar-category-border-radius);
+    box-shadow: var(--editar-category-shadow);
+    padding: var(--editar-category-pad-lg);
+  }
+
+  &__header {
+    align-items: center;
+    text-align: center;
+    margin-bottom: var(--editar-category-gap);
+    padding-bottom: var(--editar-category-header-padding-bottom);
+    background: var(--editar-category-header-bg);
+    padding: var(--editar-category-header-padding);
+    border-radius: var(--editar-category-header-border-radius);
+  }
+
+  &__title {
+    font-size: var(--editar-category-title-font-size);
+    color: var(--editar-category-title-color);
+    font-weight: var(--editar-category-title-font-weight);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--editar-category-gap);
+  }
+
+  &__field {
+    box-shadow: var(--editar-category-shadow-field);
+    display: flex;
+    flex-direction: column;
+    gap: var(--editar-category-field-gap);
+    padding: var(--editar-category-field-padding);
+    border-radius: var(--editar-category-field-border-radius);
+    transition: all 0.3s ease;
+  }
+
+  &__label {
+    font-size: var(--editar-category-label-font-size);
+    font-weight: var(--editar-category-label-font-weight);
+    color: var(--editar-category-label-color);
+    margin: var(--editar-category-label-margin);
+  }
+
+  &__input {
+    padding: var(--editar-category-btn-padding-y) var(--editar-category-field-padding);
+    border-radius: var(--editar-category-input-border-radius);
+    background-color: var(--editar-category-input-bg);
+    font-size: var(--editar-category-input-font-size);
+    border: 1px solid var(--editar-category-input-border-color);
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--editar-category-input-focus-border);
+    }
+
+    &:hover {
+      border-color: var(--editar-category-input-hover-border);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: var(--editar-category-actions-gap);
+    justify-content: flex-end;
+    padding-top: var(--editar-category-actions-padding-top);
+    margin-top: var(--editar-category-actions-margin-top);
+  }
+
+  &__btn {
+    padding: var(--editar-category-btn-padding-y) var(--editar-category-btn-padding-x);
+    font-size: var(--editar-category-btn-font-size);
+    font-weight: var(--editar-category-btn-font-weight);
+    font-family: var(--editar-category-font-article);
+    border-radius: var(--editar-category-btn-border-radius);
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+
+    &--cancel {
+      background-color: var(--mls-sys-color-gris-1);
+      color: var(--mls-sys-color-primario-9);
+      border: 2px solid var(--mls-sys-color-primario-7);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--editar-category-btn-hover-shadow);
+      }
+    }
+
+    &--submit {
+      background-color: var(--editar-category-btn-submit-bg);
+      color: var(--editar-category-btn-submit-color);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--editar-category-btn-hover-shadow);
+      }
+    }
+  }
+}

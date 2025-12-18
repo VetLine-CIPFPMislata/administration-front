@@ -26,6 +26,7 @@
   --categories-table-header-color: var(--mls-sys-color-gris-1);
   --categories-table-cell-padding: var(--mls-sys-padding-3);
   --categories-table-cell-color: var(--mls-sys-color-gris-13);
+  --categories-table-cell-color-name: var(--mls-sys-color-gris-13);
   --categories-table-cell-font-size: var(--mls-sys-font-size-4);
   --categories-table-header-font-size: var(--mls-sys-font-size-5);
   --categories-table-header-font-weight: var(--mls-sys-font-weight-4);
@@ -169,6 +170,12 @@
     text-align: center;
 
     &--left {
+      text-align: left;
+      padding-left: var(--categories-table-cell-padding-left);
+    }
+    &--name {
+      color: var(--categories-table-cell-color-name);
+      text-decoration: underline;
       text-align: left;
       padding-left: var(--categories-table-cell-padding-left);
     }

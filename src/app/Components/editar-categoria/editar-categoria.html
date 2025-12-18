@@ -1,0 +1,24 @@
+<div class="editar-category">
+  <div class="editar-category__container">
+    <div class="editar-category__header">
+      <h1 class="editar-category__title">Editar categoría</h1>
+    </div>
+
+    <form class="editar-category__form">
+      <div class="editar-category__field">
+        <label class="editar-category__label" for="name">Nombre:</label>
+        <input class="editar-category__input" id="name" name="name" [(ngModel)]="categoria.name" required />
+      </div>
+
+      <div class="editar-category__field">
+        <label class="editar-category__label" for="description">Descripción:</label>
+        <input class="editar-category__input" id="description" name="description" [(ngModel)]="categoria.description" required />
+      </div>
+
+      <div class="editar-category__actions">
+        <button class="editar-category__btn editar-category__btn--cancel" type="button" (click)="cancelar()">Volver</button>
+        <button class="editar-category__btn editar-category__btn--submit" type="button" (click)="guardarCambios()">Guardar cambios</button>
+      </div>
+    </form>
+  </div>
+</div>
