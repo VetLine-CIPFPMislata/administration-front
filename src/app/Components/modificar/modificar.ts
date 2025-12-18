@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 export class Modificar {
   articulo!: Articulo;
   categorias: Category[] = [];
-  selectedCategoryId: string = '';
+  selectedCategoryId: any = '';
   constructor(private http: Http, private route: ActivatedRoute, private router: Router) {}
   
   ngOnInit(){
@@ -39,7 +39,7 @@ export class Modificar {
   }
   modificarArticulo(){
     if(this.articulo) {
-      const categoriaSeleccionada = this.categorias.find(cat => cat.id === this.selectedCategoryId);
+      const categoriaSeleccionada = this.categorias.find(cat => cat.id == this.selectedCategoryId);
       if (categoriaSeleccionada) {
         this.articulo.category = categoriaSeleccionada;
       }
