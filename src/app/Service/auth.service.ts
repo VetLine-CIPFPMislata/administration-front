@@ -2,25 +2,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { User } from '../Modelos/User';
+import { LoginRequest } from '../Modelos/LoginRequest';
+import { LoginResponse } from '../Modelos/LoginResponse';
 
-export interface LoginRequest {
-  email: string;
-  password: string;
-}
 
-export interface LoginResponse {
-  token: string;
-  email: string;
-  name: string;
-}
-
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-  phone?: string;
-  cartId?: number;
-}
 
 @Injectable({
   providedIn: 'root',

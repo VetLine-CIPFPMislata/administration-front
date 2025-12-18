@@ -64,8 +64,8 @@ export class Nuevo {
     this.http.Nuevo(articulo as any).subscribe({
       next: () => {
         console.log('Artículo creado con éxito');
-        alert('Artículo creado con éxito');
         this.router.navigate(['/articulos']);
+        this.http.getAll();
       },
       error: (error) => {
         console.error('Error al crear artículo:', error);

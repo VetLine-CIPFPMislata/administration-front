@@ -1,12 +1,4 @@
 .login {
-
-  --login-header-height: 56px;
-  --login-footer-height: 30px;
-  --login-available-height: calc(100vh - var(--login-header-height) - var(--login-footer-height));
-
-  // ══════════════════════════════════════════════════════════════════════════
-  // COLORS
-  // ══════════════════════════════════════════════════════════════════════════
   --login-bg-color: var(--mls-sys-color-primario-1);
   --login-container-bg: var(--mls-sys-color-gris-1);
   --login-title-color: var(--mls-sys-color-primario-10);
@@ -22,20 +14,12 @@
   --login-error-color: var(--mls-sys-color-rojo-9);
   --login-error-border: var(--mls-sys-color-rojo-7);
   --login-header-border-color: var(--mls-sys-color-primario-5);
-
-  // ══════════════════════════════════════════════════════════════════════════
-  // SPACING (padding, margin, gap)
-  // ══════════════════════════════════════════════════════════════════════════
   --login-padding-sm: var(--mls-sys-padding-2);
   --login-padding-md: var(--mls-sys-padding-3);
   --login-padding-lg: var(--mls-sys-padding-4);
   --login-gap-sm: var(--mls-sys-gap-1);
   --login-gap-md: var(--mls-sys-gap-2);
   --login-gap-lg: var(--mls-sys-gap-3);
-
-  // ══════════════════════════════════════════════════════════════════════════
-  // TYPOGRAPHY
-  // ══════════════════════════════════════════════════════════════════════════
   --login-font-family: var(--mls-sys-font-Article, sans-serif);
   --login-title-font-size: var(--mls-sys-font-size-7);
   --login-label-font-size: var(--mls-sys-font-size-4);
@@ -43,29 +27,18 @@
   --login-input-font-size: var(--mls-sys-font-size-4);
   --login-btn-font-size: var(--mls-sys-font-size-5);
   --login-btn-font-weight: var(--mls-sys-font-weight-4);
-
-  // ══════════════════════════════════════════════════════════════════════════
-  // BORDERS & SHADOWS
-  // ══════════════════════════════════════════════════════════════════════════
   --login-border-radius-sm: var(--mls-sys-border-radius-2);
   --login-border-radius-md: var(--mls-sys-border-radius-3);
   --login-shadow: var(--mls-sys-box-shadow-3);
 
-  // ══════════════════════════════════════════════════════════════════════════
-  // SIZES
-  // ══════════════════════════════════════════════════════════════════════════
   --login-logo-width: var(--mls-sys-width-8);
   --login-container-max-width: var(--mls-sys-width-13);
 
-  // ══════════════════════════════════════════════════════════════════════════
-  // BACKGROUND IMAGE
-  // ══════════════════════════════════════════════════════════════════════════
+
   --login-bg-image: url("/imagenFondoVetLine.avif");
   --login-bg-overlay: rgba(24, 24, 24, 0.223);
 
-  // ══════════════════════════════════════════════════════════════════════════
-  // MAIN LAYOUT
-  // ══════════════════════════════════════════════════════════════════════════
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +47,7 @@
   box-sizing: border-box;
   position: relative;
 
-  // Background image with dark overlay
+
   background: 
     linear-gradient(var(--login-bg-overlay), var(--login-bg-overlay)),
     var(--login-bg-image);
@@ -189,9 +162,6 @@
   }
 }
 
-// ══════════════════════════════════════════════════════════════════════════
-// RESPONSIVE - Pantallas pequeñas
-// ══════════════════════════════════════════════════════════════════════════
 @media (max-height: 600px) {
   .login {
     height: auto;
