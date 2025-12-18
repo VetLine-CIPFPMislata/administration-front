@@ -25,32 +25,17 @@ export class Articulos {
     this.cargarArticulos();
 
     this.http.getAllCategories().subscribe({
-      next: (datos) => {
-        if (Array.isArray(datos)) {
-          this.categorias = datos;
-        } else if ((datos as any).content) {
-          this.categorias = (datos as any).content;
-        } else if ((datos as any).data) {
-          this.categorias = (datos as any).data;
-        } else {
-          this.categorias = [];
-        }
-      },
-      error: (error) => console.error('Error al cargar categorías:', error)
+      next: (categorias) => this.categorias = categorias,
+      error: (error) => console.log(error)
     });
   }
   
   cargarArticulos() {
     this.http.getAll().subscribe({
       next: (datos) => {
-        if (Array.isArray(datos)) {
-          this.articulosFiltrados = datos;
-        } else if ((datos as any).data) {
+        if ((datos as any).data) {
           this.articulosFiltrados = (datos as any).data;
-        } else {
-          this.articulosFiltrados = [];
-        }
-      },
+        }},
       error: (error) => { console.error('Error completo:', error)}
     });
   }
@@ -61,7 +46,7 @@ export class Articulos {
     } else {
       this.http.getProductsByCategory(this.categoriaSeleccionada).subscribe({
         next: (datos) => {
-          if (Array.isArray(datos)) {
+          if (datos) {
             this.articulosFiltrados = datos;
           } else {
             this.articulosFiltrados = [];
