@@ -37,12 +37,14 @@
   --borrar-articulo-actions-gap: var(--mls-sys-gap-2);
   --borrar-articulo-actions-padding-top: var(--mls-sys-padding-3);
   --borrar-articulo-btn-hover-shadow: var(--mls-sys-box-shadow-3);
+  --borrar-articulo-font-article: var(--mls-sys-font-Article, sans-serif);
 
   padding: var(--borrar-articulo-padding);
   background-color: var(--borrar-articulo-bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--borrar-articulo-font-article);
 
   &__container {
     max-width: var(--borrar-articulo-container-width);

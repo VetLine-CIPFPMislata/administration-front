@@ -52,6 +52,8 @@
   --modificar-articulo-textarea-min-height: var(--mls-sys-height-5);
   --modificar-articulo-label-margin: var(--mls-sys-margin-2);
   --modificar-articulo-shadow-field: var(--mls-sys-box-shadow-2);
+  --modificar-articulo-font-header: var(--mls-sys-font-header, sans-serif);
+  --modificar-articulo-font-article: var(--mls-sys-font-Article, sans-serif);
 
   padding: var(--modificar-articulo-padding);
   background-color: var(--modificar-articulo-bg-color);
@@ -59,6 +61,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: var(--modificar-articulo-font-article);
 
   &__container {
     max-width: var(--modificar-articulo-container-width);
