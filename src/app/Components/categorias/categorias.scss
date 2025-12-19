@@ -27,6 +27,7 @@
   --categories-table-cell-padding: var(--mls-sys-padding-3);
   --categories-table-cell-color: var(--mls-sys-color-gris-13);
   --categories-table-cell-color-name: var(--mls-sys-color-gris-13);
+  --categories-table-cell-hover-color: var(--mls-sys-color-primario-7);
   --categories-table-cell-font-size: var(--mls-sys-font-size-4);
   --categories-table-header-font-size: var(--mls-sys-font-size-5);
   --categories-table-header-font-weight: var(--mls-sys-font-weight-4);
@@ -178,6 +179,12 @@
       text-decoration: underline;
       text-align: left;
       padding-left: var(--categories-table-cell-padding-left);
+    }
+    &--name:hover {
+      cursor: pointer;
+      color: var(--categories-table-cell-hover-color);
+      text-decoration: underline;
+      transition: all 0.3s ease;
     }
 
     &--actions {
