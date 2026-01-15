@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Articulo } from '../Modelos/Articulo';
 import { Category } from '../Modelos/Category';
+import { Page } from '../Modelos/Page';
 
 @Injectable({
   providedIn: 'root',
@@ -25,6 +26,14 @@ export class Http {
 
   getAll(): Observable <Articulo[]> {
     return this.Mihttp.get<Articulo[]>(this.urlProducts + "?size=100", { headers: this.getAuthHeaders() })
+  }
+
+  getAllPaginated(page: number, size: number): Observable<Page<Articulo>> {
+    return this.Mihttp.get<Page<Articulo>>(`${this.urlProducts}?page=${page}&size=${size}`, { headers: this.getAuthHeaders() })
+  }
+
+  getProductsByCategoryPaginated(category: string, page: number, size: number): Observable<Page<Articulo>> {
+    return this.Mihttp.get<Page<Articulo>>(`${this.urlProducts}/search/category/${category}?page=${page}&size=${size}`, { headers: this.getAuthHeaders() })
   }
 
   getById(id: String): Observable <Articulo> {

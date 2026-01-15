@@ -227,4 +227,90 @@
       transform: scale(1.1);
     }
   }
+
+  // Estilos para paginación
+  &__loading {
+    padding: var(--articulos-container-padding);
+    text-align: center;
+    color: var(--articulos-label-color);
+    font-style: italic;
+  }
+
+  &__pagination-info {
+    padding: var(--articulos-select-padding);
+    font-size: var(--articulos-label-font-size);
+    color: var(--articulos-label-color);
+    text-align: right;
+    margin-bottom: var(--articulos-gap);
+  }
+
+  &__table-cell--empty {
+    text-align: center;
+    color: var(--articulos-label-color);
+    font-style: italic;
+    padding: calc(var(--articulos-table-cell-padding) * 2);
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--articulos-gap);
+    margin-top: var(--articulos-gap);
+    padding: var(--articulos-container-padding);
+  }
+
+  &__pagination-btn {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--articulos-gap) / 2);
+    padding: var(--articulos-btn-padding-y) var(--articulos-btn-padding-x);
+    background-color: var(--articulos-select-bg);
+    color: var(--articulos-table-cell-color);
+    border: 1px solid var(--articulos-select-border);
+    border-radius: var(--articulos-btn-border-radius);
+    font-size: var(--articulos-btn-font-size);
+    font-weight: var(--articulos-btn-font-weight);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    min-width: 40px;
+    height: 40px;
+    justify-content: center;
+
+    &:hover:not(:disabled) {
+      background-color: var(--articulos-btn-nuevo-bg);
+      color: var(--articulos-btn-nuevo-color);
+      transform: translateY(-1px);
+      box-shadow: var(--articulos-shadow);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    &--active {
+      background-color: var(--articulos-table-header-bg);
+      color: var(--articulos-table-header-color);
+      font-weight: bold;
+
+      &:hover {
+        background-color: var(--articulos-table-header-bg);
+        color: var(--articulos-table-header-color);
+        transform: none;
+      }
+    }
+
+    &--prev,
+    &--next {
+      padding: var(--articulos-btn-padding-y) calc(var(--articulos-btn-padding-x) * 1.5);
+    }
+  }
+
+  &__pagination-pages {
+    display: flex;
+    gap: calc(var(--articulos-gap) / 2);
+  }
 }

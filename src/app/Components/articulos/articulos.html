@@ -16,6 +16,17 @@
     </div>
   </div>
 
+
+  @if (isLoading) {
+    <div class="articulos__loading">
+      <p>Cargando artículos...</p>
+    </div>
+  }
+
+  <div class="articulos__pagination-info">
+    <span>Mostrando {{ ((currentPage - 1) * pageSize) + 1 }} - {{ calcularElementoFinal() }} de {{ totalElements }} artículos</span>
+  </div>
+
   <table class="articulos__table">
     <thead class="articulos__table-head">
       <tr class="articulos__table-row">
@@ -41,7 +52,47 @@
             </a>
           </td>
         </tr>
+      } @empty {
+        @if (!isLoading) {
+          <tr class="articulos__table-row">
+            <td colspan="5" class="articulos__table-cell articulos__table-cell--empty">
+              No se encontraron artículos
+            </td>
+          </tr>
+        }
       }
     </tbody>
   </table>
+
+  @if (totalPages > 1) {
+    <div class="articulos__pagination">
+      <button 
+        class="articulos__pagination-btn articulos__pagination-btn--prev"
+        [disabled]="currentPage === 1 || isLoading"
+        (click)="previousPage()">
+        <mat-icon>chevron_left</mat-icon>
+        Anterior
+      </button>
+      
+      <div class="articulos__pagination-pages">
+        @for (page of getVisiblePages(); track page) {
+          <button 
+            class="articulos__pagination-btn"
+            [class.articulos__pagination-btn--active]="page === currentPage"
+            [disabled]="isLoading"
+            (click)="goToPage(page)">
+            {{page}}
+          </button>
+        }
+      </div>
+      
+      <button 
+        class="articulos__pagination-btn articulos__pagination-btn--next"
+        [disabled]="currentPage === totalPages || isLoading"
+        (click)="nextPage()">
+        Siguiente
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+  }
 </div>
