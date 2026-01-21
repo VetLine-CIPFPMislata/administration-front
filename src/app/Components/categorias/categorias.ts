@@ -70,6 +70,9 @@ export class Categorias {
       },
       error: (err) => {
         console.error('Error borrando la categoría:', err);
+        if (err.status === 409) {
+          alert('No se puede eliminar esta categoría porque tiene productos asociados.');
+        }
         this.close();
       },
     });

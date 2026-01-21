@@ -25,7 +25,7 @@ export class Http {
 
 
   getAll(): Observable <Articulo[]> {
-    return this.Mihttp.get<Articulo[]>(this.urlProducts + "?size=100", { headers: this.getAuthHeaders() })
+    return this.Mihttp.get<Articulo[]>(this.urlProducts, { headers: this.getAuthHeaders() })
   }
 
   getAllPaginated(page: number, size: number): Observable<Page<Articulo>> {
